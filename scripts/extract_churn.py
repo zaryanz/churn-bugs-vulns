@@ -3,7 +3,7 @@ from pydriller import Repository
 from pathlib import Path
 from tqdm import tqdm
 
-df = pd.read_csv("data/intermediate/commits_ds_apache.csv")
+df = pd.read_csv("data/intermediate/commits_dataset_linux.csv")
 
 rows = []
 
@@ -19,7 +19,6 @@ for _, r in tqdm(df.iterrows(), total=len(df)):
     try:
         for c in Repository(repo_path, single=r.commit_id).traverse_commits():
             for m in c.modified_files:
-                print(m)
                 if r.language == "Java" and not m.filename.endswith(".java"):
                     continue
                 if r.language == "C++" and not m.filename.endswith((".c",".cpp",".h",".hpp")):
@@ -33,8 +32,8 @@ for _, r in tqdm(df.iterrows(), total=len(df)):
 
     rows.append({
         "commit_id": r.commit_id,
-        "loc_added": added,
-        "loc_deleted": deleted,
+        "num_lines_added": added,
+        "num_lines_deleted": deleted,
         "churn": added + deleted,
         "files_changed": files
     })
