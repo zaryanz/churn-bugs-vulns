@@ -20,7 +20,7 @@ for entry in data:
         "repo_url": repo_url,
         "project": project,
         "label_type": "bug",
-        "commit_role": "VFC",
+        "commit_role": "BFC",
         "language": "C",
         "dataset_source": "KFC"
     })
@@ -32,7 +32,7 @@ for entry in data:
             "repo_url": repo_url,
             "project": project,
             "label_type": "bug",
-            "commit_role": "VIC",
+            "commit_role": "BIC",
             "language": "C",
             "dataset_source": "KFC"
         })
