@@ -7515,17 +7515,16 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="c1"># 1. Load the datasets</span>
-<span class="c1"># Replace 'labels.csv' and 'metrics.csv' with your actual filenames</span>
+<span class="c1"># Load the datasets</span>
 <span class="n">df_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/intermediate/zcommits_icvul.csv'</span><span class="p">)</span>
 <span class="n">df_metrics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/raw/commit_info.csv'</span><span class="p">)</span>
 
-<span class="c1"># 2. Merge the dataframes</span>
+<span class="c1"># Merge the dataframes</span>
 <span class="c1"># We join 'commit_id' from the first file with 'hash' from the second file</span>
 <span class="n">df_vuln</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
     <span class="n">df_labels</span><span class="p">,</span> 
@@ -7535,17 +7534,14 @@ a.anchor-link {
     <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span>
 <span class="p">)</span>
 
-<span class="c1"># 3. Calculate Churn</span>
-<span class="c1"># Churn is defined as the total number of lines modified</span>
+<span class="c1"># Calculate Churn</span>
 <span class="n">df_vuln</span><span class="p">[</span><span class="s1">'churn'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_vuln</span><span class="p">[</span><span class="s1">'num_lines_added'</span><span class="p">]</span> <span class="o">+</span> <span class="n">df_vuln</span><span class="p">[</span><span class="s1">'num_lines_deleted'</span><span class="p">]</span>
 <span class="n">df_vuln</span><span class="p">[</span><span class="s1">'Dataset'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Vulnerability'</span>
 <span class="n">df_vuln</span><span class="p">[</span><span class="s1">'Type'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_vuln</span><span class="p">[</span><span class="s1">'commit_role'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">'VIC'</span><span class="p">:</span> <span class="s1">'Inducing'</span><span class="p">,</span> <span class="s1">'VFC'</span><span class="p">:</span> <span class="s1">'Fixing'</span><span class="p">})</span>
 
-<span class="c1"># 4. Group by commit_role (VIC vs VFC) and calculate statistics</span>
-<span class="c1"># We calculate the sum (total churn) and the mean (average churn per commit)</span>
+<span class="c1"># Group by commit_role (VIC vs VFC) and calculate statistics</span>
 <span class="n">churn_results</span> <span class="o">=</span> <span class="n">df_vuln</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'commit_role'</span><span class="p">)[</span><span class="s1">'churn'</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">'sum'</span><span class="p">,</span> <span class="s1">'mean'</span><span class="p">,</span> <span class="s1">'median'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">])</span>
 
-<span class="c1"># Rename columns for clarity</span>
 <span class="n">churn_results</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Total Churn'</span><span class="p">,</span> <span class="s1">'Average Churn'</span><span class="p">,</span> <span class="s1">'Median Churn'</span><span class="p">,</span> <span class="s1">'Commit Count'</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Churn Statistics by Commit Role:"</span><span class="p">)</span>
@@ -7577,33 +7573,31 @@ VIC             50095117    6068.457541         164.0          8255
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="c1"># 1. Load the datasets</span>
-<span class="c1"># churn.csv contains the churn, commits_dataset_linux.csv contains the labels</span>
+<span class="c1"># Load the datasets</span>
 <span class="n">df_churn</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/intermediate/churn.csv'</span><span class="p">)</span>
 <span class="n">df_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/intermediate/commits_dataset_linux.csv'</span><span class="p">)</span>
 
-<span class="c1"># 2. Merge the datasets on 'commit_id'</span>
+<span class="c1"># Merge the datasets on 'commit_id'</span>
 <span class="c1"># We use an inner join to ensure we only analyze commits that exist in both files</span>
 <span class="n">df_bug</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_labels</span><span class="p">,</span> <span class="n">df_churn</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'commit_id'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
 <span class="n">df_bug</span><span class="p">[</span><span class="s1">'Dataset'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bug'</span>
 <span class="n">df_bug</span><span class="p">[</span><span class="s1">'Type'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_bug</span><span class="p">[</span><span class="s1">'commit_role'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">'BIC'</span><span class="p">:</span> <span class="s1">'Inducing'</span><span class="p">,</span> <span class="s1">'BFC'</span><span class="p">:</span> <span class="s1">'Fixing'</span><span class="p">})</span>
 
-<span class="c1"># 3. Group by 'commit_role' (BIC vs BFC) and calculate stats</span>
-<span class="c1"># We calculate statistics for the 'churn' column</span>
+<span class="c1"># Group by 'commit_role' (BIC vs BFC) and calculate stats</span>
+<span class="c1"># calculate statistics for the 'churn' column</span>
 <span class="n">stats</span> <span class="o">=</span> <span class="n">df_bug</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'commit_role'</span><span class="p">)[</span><span class="s1">'churn'</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">'sum'</span><span class="p">,</span> <span class="s1">'mean'</span><span class="p">,</span> <span class="s1">'median'</span><span class="p">,</span> <span class="s1">'std'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">])</span>
 
-<span class="c1"># 4. Clean up the output column names</span>
+<span class="c1"># Clean up the output column names</span>
 <span class="n">stats</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Total Churn'</span><span class="p">,</span> <span class="s1">'Average Churn'</span><span class="p">,</span> <span class="s1">'Median Churn'</span><span class="p">,</span> <span class="s1">'Std Dev'</span><span class="p">,</span> <span class="s1">'Commit Count'</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Churn Statistics for BIC vs BFC (Linux Dataset):"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
 
-<span class="c1"># Optional: Calculate stats for 'files_changed' as well</span>
 <span class="n">files_stats</span> <span class="o">=</span> <span class="n">df_bug</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'commit_role'</span><span class="p">)[</span><span class="s1">'files_changed'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Average Files Changed:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">files_stats</span><span class="p">)</span>
