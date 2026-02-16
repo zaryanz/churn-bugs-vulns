@@ -48,12 +48,12 @@ for _, r in df.iterrows():
 
 out = pd.DataFrame(rows)
 
-MIN_COMMITS_PER_REPO = 5
+# MIN_COMMITS_PER_REPO = 5
 
-repo_counts = out.groupby("repo_url").size()
-valid_repos = repo_counts[repo_counts >= MIN_COMMITS_PER_REPO].index
+# repo_counts = out.groupby("repo_url").size()
+# valid_repos = repo_counts[repo_counts >= MIN_COMMITS_PER_REPO].index
 
-out = out[out.repo_url.isin(valid_repos)]
+# out = out[out.repo_url.isin(valid_repos)]
 
 out.drop_duplicates(subset=["commit_id"], inplace=True)
 

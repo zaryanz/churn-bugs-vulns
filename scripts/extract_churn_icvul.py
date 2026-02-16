@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 
 COMMITS = Path("data/intermediate/commits_icvul.csv")
-DIFFS = Path("data/raw/icvul_diffs.csv")
+DIFFS = Path("data/raw/commit_info.csv")
 OUT = Path("data/intermediate/churn_icvul.csv")
 
 commits = pd.read_csv(COMMITS)
