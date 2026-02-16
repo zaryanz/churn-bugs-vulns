@@ -1,6 +1,8 @@
 import pandas as pd
 import json
 
+from utils.git_utils import get_diffstat_metrics
+
 with open('data/raw/tool_assisted_manual_dataset.json', 'r') as f:
     data = json.load(f)
 
@@ -16,14 +18,18 @@ for entry in data:
     fixing_stats = entry.get('fixing_stats')
     if isinstance(fixing_stats, dict):
         for f_hash, stats in fixing_stats.items():
-            added = stats.get('add', 0)
-            removed = stats.get('del', 0)
-            if (added + removed) > 0:
+            raw_add = stats.get('add', 0)
+            raw_del = stats.get('del', 0)
+
+            # Apply Greedy Diffstat Logic
+            mod, added, removed = get_diffstat_metrics(raw_add, raw_del)
+
+            if (added + removed + mod) > 0:
                 rows.append({
                     'commit_id': f_hash,
                     'lines_added': added,
                     'lines_removed': removed,
-                    'lines_changed': added + removed,
+                    'lines_modified': mod,  # New Column
                     'Dataset': 'Java Vuln (Manual)',
                     'Type': 'VFC'
                 })
@@ -32,14 +38,18 @@ for entry in data:
     intro_stats = entry.get('intro_stats')
     if isinstance(intro_stats, dict):
         for i_hash, stats in intro_stats.items():
-            added = stats.get('add', 0)
-            removed = stats.get('del', 0)
-            if (added + removed) > 0:
+            raw_add = stats.get('add', 0)
+            raw_del = stats.get('del', 0)
+
+            # Apply Greedy Diffstat Logic
+            mod, added, removed = get_diffstat_metrics(raw_add, raw_del)
+
+            if (added + removed + mod) > 0:
                 rows.append({
                     'commit_id': i_hash,
                     'lines_added': added,
                     'lines_removed': removed,
-                    'lines_changed': added + removed,
+                    'lines_modified': mod,  # New Column
                     'Dataset': 'Java Vuln (Manual)',
                     'Type': 'VIC'
                 })
