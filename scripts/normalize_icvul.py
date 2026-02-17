@@ -4,7 +4,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 IN = Path("data/raw/icvul.csv")
-OUT = Path("data/intermediate/commits_icvul.csv")
+OUT = Path("data/intermediate/commits_icvul_restricted.csv")
 
 df = pd.read_csv(IN)
 
@@ -56,6 +56,9 @@ out = pd.DataFrame(rows)
 # out = out[out.repo_url.isin(valid_repos)]
 
 out.drop_duplicates(subset=["commit_id"], inplace=True)
+
+if len(out) > 1000:
+    out = out.sample(n=1000, random_state=42)
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 out.to_csv(OUT, index=False)
