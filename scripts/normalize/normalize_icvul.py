@@ -3,6 +3,8 @@ import ast
 from pathlib import Path
 from urllib.parse import urlparse
 
+LINUX_DATA = Path("data/intermediate/commits_dataset_linux.csv") # to remove duplicates, since ICVul contains linux commits too
+
 IN = Path("data/raw/icvul.csv")
 OUT = Path("data/intermediate/commits_icvul_restricted.csv")
 
@@ -48,14 +50,16 @@ for _, r in df.iterrows():
 
 out = pd.DataFrame(rows)
 
-# MIN_COMMITS_PER_REPO = 5
-
-# repo_counts = out.groupby("repo_url").size()
-# valid_repos = repo_counts[repo_counts >= MIN_COMMITS_PER_REPO].index
-
-# out = out[out.repo_url.isin(valid_repos)]
-
 out.drop_duplicates(subset=["commit_id"], inplace=True)
+
+if LINUX_DATA.exists():
+    linux_ids = set(pd.read_csv(LINUX_DATA)['commit_id'])
+    out = out[~out['commit_id'].isin(linux_ids)]
+    print(f"Filtered out Linux duplicates. Remaining candidates: {len(out)}")
+
+MAX_UNIQUE_REPOS = 20 
+top_repos = out['repo_url'].value_counts().nlargest(MAX_UNIQUE_REPOS).index
+out = out[out['repo_url'].isin(top_repos)]
 
 if len(out) > 1000:
     out = out.sample(n=1000, random_state=42)
@@ -63,4 +67,4 @@ if len(out) > 1000:
 OUT.parent.mkdir(parents=True, exist_ok=True)
 out.to_csv(OUT, index=False)
 
-print(f"Saved {len(out)} ICVul commits → {OUT}")
+print(f"Saved {len(out)} ICVul commits from {out['repo_url'].nunique()} unique repos → {OUT}")

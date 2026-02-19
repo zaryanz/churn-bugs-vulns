@@ -1,20 +1,19 @@
 import difflib
+import re
 
-def get_diffstat_metrics(added: int, deleted: int):
-    """
-    Implements the greedy overlap logic from diffstat.c.
-    Pairs +/- lines as 'modifications' and treats the remainder as pure churn.
-    """
-    # Find the 'common' overlap
-    modified = min(added, deleted)
+def get_hunks_from_diff(diff_text):
+    """Splits raw diff into hunk contents using headers."""
+    hunk_split_regex = r'^@@ -\d+(?:,\d+)? \+\d+(?:,\d+)? @@.*$'
+    parts = re.split(f'({hunk_split_regex})', diff_text, flags=re.MULTILINE)
     
-    # Calculate residuals after pairing modifications
-    pure_additions = added - modified
-    pure_deletions = deleted - modified
-    
-    return modified, pure_additions, pure_deletions
+    hunks = []
+    # parts[0] is file header; we start at index 1 for actual hunks
+    for i in range(1, len(parts), 2):
+        content = parts[i+1] if (i+1) < len(parts) else ""
+        hunks.append(content)
+    return hunks
 
-def get_string_matching_metrics(added_lines_text, deleted_lines_text, threshold=0.6):
+def get_string_matching_metrics(added_lines_text, deleted_lines_text, threshold=0.7):
     """
     Calculates metrics by comparing the actual strings of lines.
     :param added_lines_text: List of strings (added lines)

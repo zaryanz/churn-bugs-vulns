@@ -4,22 +4,20 @@ from pathlib import Path
 from tqdm import tqdm
 import os
 
-# Import the fast string matching method
-from utils.git_utils import get_string_matching_metrics_fast 
+from utils.diffstat import get_diffstat_metrics
+from utils.file import is_test_file, is_source_code
 
 # Config paths
 INPUT_CSV = "data/intermediate/commits_icvul_restricted.csv"
-REPO_BASE_DIR = Path("data/repos")
-OUTPUT_PATH = "data/intermediate/icvul_semantic.csv"
+REPO_BASE_DIR = Path("repos")
+OUTPUT_PATH = "data/intermediate/churn_icvul.csv"
 
 # Load normalized metadata
-df_full = pd.read_csv(INPUT_CSV)
-
-df = df_full.groupby('commit_role', group_keys=False).sample(n=500, random_state=42)
+df = pd.read_csv(INPUT_CSV)
 
 rows = []
 
-for _, r in tqdm(df.iterrows(), total=len(df), desc="Processing ICVul (C/C++)"):
+for _, r in tqdm(df.iterrows(), total=len(df), desc="Processing ICVul (diffstat -m)"):
     repo_path = REPO_BASE_DIR / r.project
     
     if not repo_path.exists():
@@ -33,37 +31,22 @@ for _, r in tqdm(df.iterrows(), total=len(df), desc="Processing ICVul (C/C++)"):
         for c in Repository(repo_path_str, single=r.commit_id).traverse_commits():
             for m in c.modified_files:
                 file_path = m.new_path if m.new_path else ""
-                file_path_lower = file_path.lower()
                 
-                # 1. C/C++ specific filter
-                if not m.filename.lower().endswith((".c", ".cpp", ".cc", ".h", ".hpp")):
+                if not is_source_code(m.filename, "C"):
                     continue
-                
-                # 2. Test exclusion (adapted for C/C++ project structures)
-                is_test = (
-                    "/test/" in file_path_lower or 
-                    "/tests/" in file_path_lower or 
-                    "/unit_test/" in file_path_lower or
-                    m.filename.lower().startswith("test_")
-                )
-                
-                if is_test:
+        
+                if is_test_file(file_path, m.filename):
                     continue
 
-                # Extract content
-                added_text = [l[1] for l in m.diff_parsed['added']]
-                deleted_text = [l[1] for l in m.diff_parsed['deleted']]
-
-                # Method 2: String Matching
-                mod, add, rem = get_string_matching_metrics_fast(added_text, deleted_text)
+                add, rem, mod = get_diffstat_metrics(m.diff)
                 
-                modified += mod
                 added += add
                 deleted += rem
+                modified += mod
                 files += 1
                 
     except Exception as e:
-        # Silently skip errors to keep progress moving
+        print(f"Error in commit {r.commit_id}: {e}")
         continue
 
     if files > 0:
@@ -80,10 +63,8 @@ for _, r in tqdm(df.iterrows(), total=len(df), desc="Processing ICVul (C/C++)"):
             "cve_id": r.get('cve_id', 'N/A')
         })
 
-# Create and clean dataframe
 out = pd.DataFrame(rows)
 out = out.drop_duplicates(subset=['commit_id', 'commit_role'])
 out.to_csv(OUTPUT_PATH, index=False)
 
-# Quick sanity check printout
 print(f"\nCompleted! Saved {len(out)} commits to {OUTPUT_PATH}")
