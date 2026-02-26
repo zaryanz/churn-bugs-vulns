@@ -45,11 +45,12 @@ for _, r in tqdm(df.iterrows(), total=len(df), desc="Processing Linux Kernel"):
     if files > 0:
         rows.append({
             "commit_id": r.commit_id,
-            "num_lines_added": added,
-            "num_lines_deleted": deleted,
-            "num_lines_modified": modified,
+            "lines_added": added,
+            "lines_removed": deleted,
+            "lines_modified": modified,
             "files_changed": files,
-            "project": r.project
+            "project": r.project,
+            "commit_role": r.commit_role
         })
 
 out = pd.DataFrame(rows)

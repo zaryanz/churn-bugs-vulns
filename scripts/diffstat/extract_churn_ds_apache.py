@@ -46,7 +46,7 @@ for _, r in tqdm(df.iterrows(), total=len(df), desc="Processing Apache (Java)"):
         rows.append({
             "commit_id": r.commit_id,
             "lines_added": added,
-            "lines_deleted": deleted,
+            "lines_removed": deleted,
             "lines_modified": modified,
             "files_changed": files,
             "commit_role": r.commit_role,

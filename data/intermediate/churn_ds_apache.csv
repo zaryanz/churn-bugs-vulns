@@ -1,4 +1,4 @@
-commit_id,lines_added,lines_deleted,lines_modified,files_changed,commit_role,project
+commit_id,lines_added,lines_removed,lines_modified,files_changed,commit_role,project
 712504b2d,0,0,1,1,BFC,accumulo
 995080c44,193,0,13,5,BIC,accumulo
 a323f0362,0,0,4,2,BFC,accumulo
