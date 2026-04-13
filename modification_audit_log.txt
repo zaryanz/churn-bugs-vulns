@@ -125382,3 +125382,1039 @@
   [-] addShareLib(appPath, conf, getShareLibName(context, actionXml, conf));
   [+] addShareLib(conf, getShareLibName(context, actionXml, conf));
 ------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] hostnameVerifier.verify(host, session);
+  [+] if(!hostnameVerifier.verify(host, session)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] hostnameVerifier.verify(host, session);
+  [+] if(!hostnameVerifier.verify(host, session)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // by default CORS should be enabled
+  [+] // by default CORS should be disabled
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // by default CORS should be enabled
+  [+] // by default CORS should be disabled
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] case XmlPullParser.END_TAG:
+  [+] case XmlPullParser.DOCDECL:
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] break;
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] break;
+  [+] return;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] eventType = parser.next();
+  [+] eventType = parser.nextToken();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] endDocument();
+  [+] endDocument();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (endpointFile.length() > 0) {
+  [+] if (endpoint.isFlattern()) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] File file = new File(unzipDir, entry.getName());
+  [+] File file = new File(unzipDir, entry.getName());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] File file = new File(unzipDir, entry.getName());
+  [+] File file = new File(unzipDir, entry.getName());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (target == null)
+  [+] if (current == null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] RemovedChild removedChild = null;
+  [+] removal.removedChild == null)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (int i = indexInRemovalsSinceLastUpdate; i < removals_size(); i++)
+  [+] for (int i = indexInRemovalsSinceLastUpdate; i < removals.size(); i++)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] RemovedChild curRemovedChild = removals_get(i);
+  [+] RemovedChild removal = removals.get(i);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (curRemovedChild.removedChild == target ||
+  [+] if (removal.removedChild == current ||
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] }
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (removedChild == null)
+  [+] if (removals != null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] 
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] }
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] else
+  [+] } else {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] target = removedChild.previousSibling;
+  [+] current = removal.previousSibling;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] setUnmarshalType(type);
+  [+] this.unmarshalType = type;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] private void closeIdleStreams(int newMaxActiveRemoteStreamId) throws Http2Exception {
+  [+] private void closeIdleStreams(int newMaxActiveRemoteStreamId) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] private void closeIdleStreams(int newMaxActiveRemoteStreamId) throws Http2Exception {
+  [+] private void closeIdleStreams(int newMaxActiveRemoteStreamId) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (OrderByClause clause : orderByClauses) {
+  [+] for (OrderByClause clause : orderBy) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if ((buf.limit = in.read(buf.array)) == -1) {
+  [+] int l = in.read(buf.array());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] LOG.debug("Bound POJO is now: " + object);
+  [+] LOG.debug("Bound POJO is now: " + object);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] ((RichTextValue)_value).setValue(xvalue);
+  [+] ((RichTextValue) _value).setValue(xvalue);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] void handleInvoke(BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException {
+  [+] void handleInvoke(MBeanServer mbs, BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException, InstanceNotFoundException {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] void handleInvoke(BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException {
+  [+] void handleInvoke(MBeanServer mbs, BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException, InstanceNotFoundException {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] payloadLength = byteArrayToLong(inputBuffer, readPos, 8);
+  [+] payloadLength = byteArrayToLong(inputBuffer.array(),
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] publishContentHeader(new ContentHeaderBody(properties, bodySize));
+  [+] publishContentHeader(new ContentHeaderBody(properties, bodySize));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] this.executeResult = executeResult;
+  [+] this.executeResult = executeResult;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] .addConstraintViolation();
+  [+] .addConstraintViolation();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (transferEncodingValueMB != null && !transferEncodingValueMB.isNull()) {
+  [+] if (transferEncodingValueMB != null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] TokenList.parseTokenList(headers.values("transfer-encoding"), encodingNames);
+  [+] if (TokenList.parseTokenList(headers.values("transfer-encoding"), encodingNames)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (String encodingName : encodingNames) {
+  [+] for (String encodingName : encodingNames) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // "identity" codings are ignored
+  [+] // "identity" codings are ignored
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] addInputFilter(inputFilters, encodingName);
+  [+] addInputFilter(inputFilters, encodingName);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] throw new IllegalStateException("found GMS join or merge request but no AUTH header");
+  [+] throw new IllegalStateException(String.format("found %s from %s but no AUTH header", gms_hdr, msg.src()));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] throw new IllegalStateException("found GMS join or merge request but no AUTH header");
+  [+] throw new IllegalStateException(String.format("found %s from %s but no AUTH header", gms_hdr, msg.src()));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] hostnameVerifier.verify(host, session);
+  [+] if(!hostnameVerifier.verify(host, session)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] hostnameVerifier.verify(host, session);
+  [+] if(!hostnameVerifier.verify(host, session)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // by default CORS should be enabled
+  [+] // by default CORS should be disabled
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // by default CORS should be enabled
+  [+] // by default CORS should be disabled
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] case XmlPullParser.END_TAG:
+  [+] case XmlPullParser.DOCDECL:
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] break;
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] break;
+  [+] return;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] eventType = parser.next();
+  [+] eventType = parser.nextToken();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] endDocument();
+  [+] endDocument();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (endpointFile.length() > 0) {
+  [+] if (endpoint.isFlattern()) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] File file = new File(unzipDir, entry.getName());
+  [+] File file = new File(unzipDir, entry.getName());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] File file = new File(unzipDir, entry.getName());
+  [+] File file = new File(unzipDir, entry.getName());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (target == null)
+  [+] if (current == null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] RemovedChild removedChild = null;
+  [+] removal.removedChild == null)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (int i = indexInRemovalsSinceLastUpdate; i < removals_size(); i++)
+  [+] for (int i = indexInRemovalsSinceLastUpdate; i < removals.size(); i++)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] RemovedChild curRemovedChild = removals_get(i);
+  [+] RemovedChild removal = removals.get(i);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (curRemovedChild.removedChild == target ||
+  [+] if (removal.removedChild == current ||
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] }
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (removedChild == null)
+  [+] if (removals != null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] 
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] }
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] else
+  [+] } else {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] target = removedChild.previousSibling;
+  [+] current = removal.previousSibling;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] setUnmarshalType(type);
+  [+] this.unmarshalType = type;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] private void closeIdleStreams(int newMaxActiveRemoteStreamId) throws Http2Exception {
+  [+] private void closeIdleStreams(int newMaxActiveRemoteStreamId) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] private void closeIdleStreams(int newMaxActiveRemoteStreamId) throws Http2Exception {
+  [+] private void closeIdleStreams(int newMaxActiveRemoteStreamId) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (OrderByClause clause : orderByClauses) {
+  [+] for (OrderByClause clause : orderBy) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if ((buf.limit = in.read(buf.array)) == -1) {
+  [+] int l = in.read(buf.array());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] LOG.debug("Bound POJO is now: " + object);
+  [+] LOG.debug("Bound POJO is now: " + object);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] ((RichTextValue)_value).setValue(xvalue);
+  [+] ((RichTextValue) _value).setValue(xvalue);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] void handleInvoke(BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException {
+  [+] void handleInvoke(MBeanServer mbs, BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException, InstanceNotFoundException {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] void handleInvoke(BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException {
+  [+] void handleInvoke(MBeanServer mbs, BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException, InstanceNotFoundException {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] payloadLength = byteArrayToLong(inputBuffer, readPos, 8);
+  [+] payloadLength = byteArrayToLong(inputBuffer.array(),
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] publishContentHeader(new ContentHeaderBody(properties, bodySize));
+  [+] publishContentHeader(new ContentHeaderBody(properties, bodySize));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] this.executeResult = executeResult;
+  [+] this.executeResult = executeResult;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] .addConstraintViolation();
+  [+] .addConstraintViolation();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (transferEncodingValueMB != null && !transferEncodingValueMB.isNull()) {
+  [+] if (transferEncodingValueMB != null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] TokenList.parseTokenList(headers.values("transfer-encoding"), encodingNames);
+  [+] if (TokenList.parseTokenList(headers.values("transfer-encoding"), encodingNames)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (String encodingName : encodingNames) {
+  [+] for (String encodingName : encodingNames) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // "identity" codings are ignored
+  [+] // "identity" codings are ignored
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] addInputFilter(inputFilters, encodingName);
+  [+] addInputFilter(inputFilters, encodingName);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] throw new IllegalStateException("found GMS join or merge request but no AUTH header");
+  [+] throw new IllegalStateException(String.format("found %s from %s but no AUTH header", gms_hdr, msg.src()));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] throw new IllegalStateException("found GMS join or merge request but no AUTH header");
+  [+] throw new IllegalStateException(String.format("found %s from %s but no AUTH header", gms_hdr, msg.src()));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] hostnameVerifier.verify(host, session);
+  [+] if(!hostnameVerifier.verify(host, session)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] hostnameVerifier.verify(host, session);
+  [+] if(!hostnameVerifier.verify(host, session)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // by default CORS should be enabled
+  [+] // by default CORS should be disabled
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // by default CORS should be enabled
+  [+] // by default CORS should be disabled
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] case XmlPullParser.END_TAG:
+  [+] case XmlPullParser.DOCDECL:
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] break;
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] break;
+  [+] return;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] eventType = parser.next();
+  [+] eventType = parser.nextToken();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] endDocument();
+  [+] endDocument();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (endpointFile.length() > 0) {
+  [+] if (endpoint.isFlattern()) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] File file = new File(unzipDir, entry.getName());
+  [+] File file = new File(unzipDir, entry.getName());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] File file = new File(unzipDir, entry.getName());
+  [+] File file = new File(unzipDir, entry.getName());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (target == null)
+  [+] if (current == null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] RemovedChild removedChild = null;
+  [+] removal.removedChild == null)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (int i = indexInRemovalsSinceLastUpdate; i < removals_size(); i++)
+  [+] for (int i = indexInRemovalsSinceLastUpdate; i < removals.size(); i++)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] RemovedChild curRemovedChild = removals_get(i);
+  [+] RemovedChild removal = removals.get(i);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (curRemovedChild.removedChild == target ||
+  [+] if (removal.removedChild == current ||
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] }
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (removedChild == null)
+  [+] if (removals != null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] 
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] }
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] else
+  [+] } else {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] target = removedChild.previousSibling;
+  [+] current = removal.previousSibling;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] setUnmarshalType(type);
+  [+] this.unmarshalType = type;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] private void closeIdleStreams(int newMaxActiveRemoteStreamId) throws Http2Exception {
+  [+] private void closeIdleStreams(int newMaxActiveRemoteStreamId) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] private void closeIdleStreams(int newMaxActiveRemoteStreamId) throws Http2Exception {
+  [+] private void closeIdleStreams(int newMaxActiveRemoteStreamId) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (OrderByClause clause : orderByClauses) {
+  [+] for (OrderByClause clause : orderBy) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if ((buf.limit = in.read(buf.array)) == -1) {
+  [+] int l = in.read(buf.array());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] LOG.debug("Bound POJO is now: " + object);
+  [+] LOG.debug("Bound POJO is now: " + object);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] ((RichTextValue)_value).setValue(xvalue);
+  [+] ((RichTextValue) _value).setValue(xvalue);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] void handleInvoke(BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException {
+  [+] void handleInvoke(MBeanServer mbs, BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException, InstanceNotFoundException {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] void handleInvoke(BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException {
+  [+] void handleInvoke(MBeanServer mbs, BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException, InstanceNotFoundException {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] payloadLength = byteArrayToLong(inputBuffer, readPos, 8);
+  [+] payloadLength = byteArrayToLong(inputBuffer.array(),
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] publishContentHeader(new ContentHeaderBody(properties, bodySize));
+  [+] publishContentHeader(new ContentHeaderBody(properties, bodySize));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] this.executeResult = executeResult;
+  [+] this.executeResult = executeResult;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] .addConstraintViolation();
+  [+] .addConstraintViolation();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (transferEncodingValueMB != null && !transferEncodingValueMB.isNull()) {
+  [+] if (transferEncodingValueMB != null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] TokenList.parseTokenList(headers.values("transfer-encoding"), encodingNames);
+  [+] if (TokenList.parseTokenList(headers.values("transfer-encoding"), encodingNames)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (String encodingName : encodingNames) {
+  [+] for (String encodingName : encodingNames) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // "identity" codings are ignored
+  [+] // "identity" codings are ignored
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] addInputFilter(inputFilters, encodingName);
+  [+] addInputFilter(inputFilters, encodingName);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] throw new IllegalStateException("found GMS join or merge request but no AUTH header");
+  [+] throw new IllegalStateException(String.format("found %s from %s but no AUTH header", gms_hdr, msg.src()));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] throw new IllegalStateException("found GMS join or merge request but no AUTH header");
+  [+] throw new IllegalStateException(String.format("found %s from %s but no AUTH header", gms_hdr, msg.src()));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] throw new ScimException("Invalid filter expression: [" + filter + "]", HttpStatus.BAD_REQUEST);
+  [+] throw new ScimException("Invalid filter expression: [" + HtmlUtils.htmlEscape(filter) + "]", HttpStatus.BAD_REQUEST);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] HttpResponse outboundNettyResponse = new DefaultHttpResponse(httpVersion, httpResponseStatus, false);
+  [+] HttpResponse outboundNettyResponse = new DefaultHttpResponse(httpVersion, httpResponseStatus);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] new DefaultFullHttpResponse(httpVersion, httpResponseStatus, fullContent, false);
+  [+] new DefaultFullHttpResponse(httpVersion, httpResponseStatus, fullContent);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] (String) outboundRequestMsg.getProperty(TO), false);
+  [+] (String) outboundRequestMsg.getProperty(TO));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] String result;
+  [+] String result = link.toString();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (result.indexOf("<script>") >= 0){
+  [+] while (result.indexOf("<script>") > 0){
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] addParameter("href", findString(href));
+  [+] addParameter("href", ensureAttributeSafelyNotEscaped(findString(href)));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] space = ciphertext.length - ciphertextOffset;
+  [+] space = ciphertext.length - ciphertextOffset;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] space = ciphertext.length - ciphertextOffset;
+  [+] space = ciphertext.length - ciphertextOffset;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (ciphertextOffset > ciphertext.length)
+  [+] if (ciphertextOffset < 0 || ciphertextOffset > ciphertext.length)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] space = ciphertext.length - ciphertextOffset;
+  [+] space = ciphertext.length - ciphertextOffset;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (cache) {
+  [+] if (cache) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (session != null) {
+  [+] if (session != null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (cache) {
+  [+] if (cache) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (session != null) {
+  [+] if (session != null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] hostnameVerifier.verify(host, session);
+  [+] if(!hostnameVerifier.verify(host, session)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] hostnameVerifier.verify(host, session);
+  [+] if(!hostnameVerifier.verify(host, session)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] List<ScimUser> results = scimUserProvisioning.query(String.format("email eq \"%s\" and origin eq \"%s\"", email, origin), IdentityZoneHolder.get().getId());
+  [+] List<ScimUser> results = scimUserProvisioning.retrieveByEmailAndZone(email, origin, IdentityZoneHolder.get().getId());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] while (v < vt) {
+  [+] if (v < vt) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // by default CORS should be enabled
+  [+] // by default CORS should be disabled
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] return true;
+  [+] return false;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // by default CORS should be enabled
+  [+] // by default CORS should be disabled
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] return true;
+  [+] return false;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] logger.debug("CatchAllFilter received provided whitelisted context paths from NiFi properties: " + providedWhitelist);
+  [+] logger.debug("CatchAllFilter  [" + displayPath + "] received provided whitelisted context paths from NiFi properties: " + getWhitelistedContextPaths());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // for all requests to index.jsp
+  [+] // Forward all requests to index.jsp
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] break;
+  [+] //   break;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] case XmlPullParser.END_TAG:
+  [+] case XmlPullParser.DOCDECL:
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] break;
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] break;
+  [+] return;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] eventType = parser.next();
+  [+] eventType = parser.nextToken();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] endDocument();
+  [+] endDocument();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] String endpointFile = endpoint.getConfiguration().getDirectory();
+  [+] String endpointPath = endpoint.getConfiguration().getDirectory();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (endpointFile.length() > 0) {
+  [+] if (endpoint.isFlattern()) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] File file = new File(unzipDir, entry.getName());
+  [+] File file = new File(unzipDir, entry.getName());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] File file = new File(unzipDir, entry.getName());
+  [+] File file = new File(unzipDir, entry.getName());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (target == null)
+  [+] if (current == null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] RemovedChild removedChild = null;
+  [+] removal.removedChild == null)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (int i = indexInRemovalsSinceLastUpdate; i < removals_size(); i++)
+  [+] for (int i = indexInRemovalsSinceLastUpdate; i < removals.size(); i++)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] 
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] RemovedChild curRemovedChild = removals_get(i);
+  [+] RemovedChild removal = removals.get(i);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (curRemovedChild.removedChild == target ||
+  [+] if (removal.removedChild == current ||
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] }
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (removedChild == null)
+  [+] if (removals != null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] }
+  [+] }
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] else
+  [+] } else {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] {
+  [+] 
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] target = removedChild.previousSibling;
+  [+] current = removal.previousSibling;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] setUnmarshalType(type);
+  [+] this.unmarshalType = type;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] unverifiedHandshake.peerCertificates());
+  [+] .normalizeCertificateChain(unverifiedHandshake.peerCertificates());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Stream stream = getStream(newMaxActiveRemoteStreamId, false);
+  [+] Stream stream = getStream(i, false);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] private void closeIdleStreams(int newMaxActiveRemoteStreamId) throws Http2Exception {
+  [+] private void closeIdleStreams(int newMaxActiveRemoteStreamId) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] stream.closeIfIdle();
+  [+] entry.getValue().closeIfIdle();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] private void closeIdleStreams(int newMaxActiveRemoteStreamId) throws Http2Exception {
+  [+] private void closeIdleStreams(int newMaxActiveRemoteStreamId) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] stream.closeIfIdle();
+  [+] entry.getValue().closeIfIdle();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] mapping.setName(name);
+  [+] mapping.setName(cleanupActionName(name));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] mapping.setName(name);
+  [+] mapping.setName(cleanupActionName(name));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (OrderByClause clause : orderByClauses) {
+  [+] for (OrderByClause clause : orderBy) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] "serialVersionUID", "password", "type", "udynMembershipCond"
+  [+] "serialVersionUID", "password", "type", "udynMembershipCond", "securityAnswer", "token", "tokenExpireTime"
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] "serialVersionUID", "password", "type", "udynMembershipCond"
+  [+] "serialVersionUID", "password", "type", "udynMembershipCond", "securityAnswer", "token", "tokenExpireTime"
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] + " where " + QueryCubePropertyEnum.CUBE.toString() + " = '" + cubeName + "'" //
+  [+] + " where " + QueryCubePropertyEnum.CUBE.toString() + " = ?" //
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] buf.position = 0;
+  [+] buf.position(0);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if ((buf.limit = in.read(buf.array)) == -1) {
+  [+] int l = in.read(buf.array());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (LOG.isDebugEnabled()) {
+  [+] if (LOG.isDebugEnabled()) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] LOG.debug("Bound POJO is now: " + object);
+  [+] LOG.debug("Bound POJO is now: " + object);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] BigInteger  r = params.getG().modPow(k, params.getP()).mod(params.getQ());
+  [+] BigInteger  r = params.getG().modPow(k, params.getP()).mod(q);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] BigInteger  r = params.getG().modPow(k, params.getP()).mod(q);
+  [+] BigInteger  r = params.getG().modPow(k.add(getRandomizer(q, random)), params.getP()).mod(q);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] logger.log(POILogger.WARN, "SXSSF doesn't support Shared Strings, rich text formatting information has be lost");
+  [+] logger.log(POILogger.WARN, "SXSSF doesn't support Shared Strings, rich text formatting information has be lost");
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] ((RichTextValue)_value).setValue(xvalue);
+  [+] ((RichTextValue) _value).setValue(xvalue);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getValue());
+  [+] Predicate like = builder.like(propertyExpression, parameterExpression, escape.getEscapeCharacter());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] void handleInvoke(BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException {
+  [+] void handleInvoke(MBeanServer mbs, BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException, InstanceNotFoundException {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] handleInvoke(null, objectName, operationName, params, signature);
+  [+] handleInvoke(mbs, null, objectName, operationName, params, signature);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] void handleInvoke(BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException {
+  [+] void handleInvoke(MBeanServer mbs, BulkRequestContext context, ObjectName objectName, String operationName, Object[] params, String[] signature) throws IOException, InstanceNotFoundException {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] payloadLength = byteArrayToLong(inputBuffer, readPos, 8);
+  [+] payloadLength = byteArrayToLong(inputBuffer.array(),
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] publishContentHeader(new ContentHeaderBody(properties, bodySize));
+  [+] publishContentHeader(new ContentHeaderBody(properties, bodySize));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] return !getSocket().isOpen();
+  [+] return closed || !getSocket().isOpen();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] response.addHeader(FRAME_OPTIONS, SAME_ORIGIN);
+  [+] response.setHeader(FRAME_OPTIONS, SAME_ORIGIN);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] org.yaml.snakeyaml.Yaml yaml = new org.yaml.snakeyaml.Yaml();
+  [+] org.yaml.snakeyaml.Yaml yaml = new org.yaml.snakeyaml.Yaml(new SafeConstructor());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] org.yaml.snakeyaml.Yaml yaml = new org.yaml.snakeyaml.Yaml();
+  [+] org.yaml.snakeyaml.Yaml yaml = new org.yaml.snakeyaml.Yaml(new SafeConstructor());
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] Configuration configuration = getArchivaConfiguration().getConfiguration();
+  [+] Configuration configuration = getArchivaConfiguration( ).getConfiguration( );
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (int i = 0; i < this.rcount; i++) {
+  [+] for (long i = 0; i < this.rcount; i++) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] this.namespace = namespace;
+  [+] this.namespace = namespace;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] this.executeResult = executeResult;
+  [+] this.executeResult = executeResult;
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] context.buildConstraintViolationWithTemplate(msg)
+  [+] context.buildConstraintViolationWithTemplate(messageTemplate)
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] .addConstraintViolation();
+  [+] .addConstraintViolation();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (transferEncodingValueMB != null && !transferEncodingValueMB.isNull()) {
+  [+] if (transferEncodingValueMB != null) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // Parse the comma separated list. "identity" codings are ignored
+  [+] // "identity" codings are ignored
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] String encodingName = null;
+  [+] List<String> encodingNames = new ArrayList<>();
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] TokenList.parseTokenList(headers.values("transfer-encoding"), encodingNames);
+  [+] if (TokenList.parseTokenList(headers.values("transfer-encoding"), encodingNames)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] for (String encodingName : encodingNames) {
+  [+] for (String encodingName : encodingNames) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] // "identity" codings are ignored
+  [+] // "identity" codings are ignored
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] addInputFilter(inputFilters, encodingName);
+  [+] addInputFilter(inputFilters, encodingName);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] throw new IllegalStateException("found GMS join or merge request but no AUTH header");
+  [+] throw new IllegalStateException(String.format("found %s from %s but no AUTH header", gms_hdr, msg.src()));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] throw new IllegalStateException("found GMS join or merge request but no AUTH header");
+  [+] throw new IllegalStateException(String.format("found %s from %s but no AUTH header", gms_hdr, msg.src()));
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] documentBuilderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false);
+  [+] documentBuilderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] documentBuilderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false);
+  [+] documentBuilderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (validateToken(ctx.request().getHeader(headerName))) {
+  [+] String header = ctx.request().getHeader(headerName);
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] private boolean validateToken(String header) {
+  [+] private boolean validateToken(String header, String cookie) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (validateToken(header == null ? ctx.request().getFormAttribute(headerName) : header)) {
+  [+] if (validateToken(header == null ? ctx.request().getFormAttribute(headerName) : header, cookie)) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] private boolean validateToken(String header) {
+  [+] private boolean validateToken(String header, String cookie) {
+------------------------------
+[DEBUG] Modification Match (Score > 0.7)
+  [-] if (validateToken(header == null ? ctx.request().getFormAttribute(headerName) : header)) {
+  [+] if (validateToken(header == null ? ctx.request().getFormAttribute(headerName) : header, cookie)) {
+------------------------------
