@@ -7,7 +7,7 @@ REPOS = Path("repos")
 REPOS.mkdir(exist_ok=True)
 
 # Load all commit CSVs
-csv_files = glob.glob("data/intermediate/commits_tosem.csv")
+csv_files = glob.glob("data/intermediate/commits_icvul_repo_restricted.csv")
 
 seen = set()
 
