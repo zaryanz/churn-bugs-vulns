@@ -1,7 +1,1 @@
-pandas
-pydriller
-tqdm
-scipy
-matplotlib
-seaborn
-jupyter
+om
