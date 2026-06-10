@@ -7,12 +7,11 @@ from multiprocessing import Pool, cpu_count, Lock
 import multiprocessing as mp
 import signal
 
-from utils.semantic import get_string_matching_metrics, get_hunks_from_diff
+from utils.diffstat import get_diffstat_metrics
 from utils.file import is_test_file, is_source_code
 
-OUTPUT_PATH = "data/intermediate/churn_linux_semantic.csv"
-
-# Global lock variable for background workers
+# Global config variables
+OUTPUT_PATH = "data/intermediate/churn_linux.csv"
 repo_lock = None
 
 def init_pool(lck):
@@ -26,8 +25,8 @@ def timeout_handler(signum, frame):
 
 def process_single_row(row_dict):
     """
-    Processes a single Linux commit row.
-    Uses a global lock strictly around the Git read operation to prevent .git/config.lock crashes.
+    Processes a single Linux commit row using the exact structural pattern
+    of the semantic script. Uses a global lock strictly around the Git read operation.
     """
     global repo_lock
     project = row_dict['project']
@@ -36,16 +35,14 @@ def process_single_row(row_dict):
     repo_path = Path("repos") / project
     if not repo_path.exists():
         return None
-    else:
-        repo_path_str = str(repo_path)
-
+    
+    repo_path_str = str(repo_path)
     added = deleted = modified = files = 0
 
-    # Wrap ONLY the PyDriller initialization inside the lock
+    # Wrap ONLY the PyDriller initialization inside the lock to prevent file lock crashes
     with repo_lock:
-        signal.alarm(120)
+        signal.alarm(120)  # 2-minute safety timeout per commit fetch
         try:
-            # We fetch and isolate the modifications safely inside the lock
             commit_modifications = []
             for c in Repository(repo_path_str, single=commit_id).traverse_commits():
                 for m in c.modified_files:
@@ -64,7 +61,7 @@ def process_single_row(row_dict):
         finally:
             signal.alarm(0)
 
-    # Heavy text processing runs COMPLETELY outside the lock, utilizing full CPU parallel power!
+    # Diff parsing runs COMPLETELY outside the lock, utilizing full CPU parallel power!
     for m in commit_modifications:
         file_path = m['new_path'] if m['new_path'] else ""
         
@@ -72,35 +69,30 @@ def process_single_row(row_dict):
             continue
         if is_test_file(file_path, m['filename']):
             continue
-        
-        hunks = get_hunks_from_diff(m['diff'])
-
-        for hunk_content in hunks:
-            lines = hunk_content.splitlines()
             
-            hunk_added = [l[1:] for l in lines if l.startswith('+') and not l.startswith('+++')]
-            hunk_deleted = [l[1:] for l in lines if l.startswith('-') and not l.startswith('---')]
+        try:
+            add, rem, mod = get_diffstat_metrics(m['diff'])
             
-            if not hunk_added and not hunk_deleted:
-                continue
-
-            # Apply similarity matching ONLY to this hunk
-            mod, add, rem = get_string_matching_metrics(hunk_added, hunk_deleted)
-            
-            modified += mod
             added += add
             deleted += rem
-            
-        files += 1
+            modified += mod
+            files += 1
+        except Exception as e:
+            print(f"Error parsing diff data for file {m['filename']} in commit {commit_id}: {e}")
+            continue
 
-    return {
-        "commit_id": commit_id,
-        "lines_added": added,
-        "lines_removed": deleted,
-        "lines_modified": modified,
-        "files_changed": files,
-        "commit_role": row_dict['commit_role']
-    }
+    # Only return the data if matching files were modified
+    if files > 0:
+        return {
+            "commit_id": commit_id,
+            "lines_added": added,
+            "lines_removed": deleted,
+            "lines_modified": modified,
+            "files_changed": files,
+            "project": project,
+            "commit_role": row_dict['commit_role']
+        }
+    return None
 
 
 if __name__ == "__main__":
@@ -110,34 +102,29 @@ if __name__ == "__main__":
     except RuntimeError:
         pass
 
-    # Load original dataset
-    df = pd.read_csv("data/intermediate/commits_dataset_linux.csv")
+    # Load and subset original dataset exactly like your single-threaded script
+    df_full = pd.read_csv("data/intermediate/commits_dataset_linux.csv")
+    df = df_full.groupby('commit_role', group_keys=False).sample(n=500, random_state=42)
 
-    # df = df_full.groupby('commit_role', group_keys=False).sample(n=1000, random_state=42)
-
-    # Transform rows to a list of flat dicts
+    # Transform DataFrame rows to a list of flat dicts for multiprocessing map
     tasks = df.to_dict(orient='records')
 
-    # Create a single lock for the entire repository
+    # Create a single shared lock for repository file safety
     single_repo_lock = Lock()
 
-    # Determine CPU worker allocation
+    # Determine CPU worker allocation favoring SLURM configurations
     num_workers = int(os.environ.get("SLURM_CPUS_PER_TASK", max(1, cpu_count() - 1)))
     print(f"Spawning {num_workers} synchronized parallel workers to analyze {len(tasks)} Linux commits...")
 
     rows = []
-    # Pass the lock to the pool
+    # Pass the lock to the pool initialization
     with Pool(num_workers, initializer=init_pool, initargs=(single_repo_lock,)) as pool:
-        for result in tqdm(pool.imap(process_single_row, tasks), total=len(tasks), desc="Processing Linux Sample"):
+        for result in tqdm(pool.imap(process_single_row, tasks), total=len(tasks), desc="Processing Linux Kernel"):
             if result is not None:
                 rows.append(result)
 
-    # Convert results back to DataFrame and run original group tracking steps
+    # Convert results back to DataFrame and write to disk
     out = pd.DataFrame(rows)
     out.to_csv(OUTPUT_PATH, index=False)
 
-    print("\nProcessing Complete. Sample stats:")
-    if not out.empty:
-        print(out.groupby('commit_role')['lines_modified'].describe())
-    else:
-        print("No rows were processed successfully.")
+    print(f"\nCompleted! Saved results for {len(out)} Linux commits.")

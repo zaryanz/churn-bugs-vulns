@@ -120,7 +120,7 @@ if __name__ == "__main__":
     # Pass our repository locks map into the worker pool initialization
     with Pool(num_workers, initializer=init_pool, initargs=(manager_locks,)) as pool:
         # imap preserves structural data alignment and handles tracking smoothly
-        for result in tqdm(pool.imap(process_single_row, tasks), total=len(tasks), desc="Processing ICVul (diffstat -m)"):
+        for result in tqdm(pool.imap(process_single_row, tasks), total=len(tasks), desc="Processing ICVul"):
             if result is not None:
                 rows.append(result)
 
