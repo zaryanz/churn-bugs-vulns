@@ -10,7 +10,7 @@ from utils.semantic import get_string_matching_metrics, get_hunks_from_diff
 from utils.file import is_test_file, is_source_code
 
 # Config paths
-INPUT_CSV = "data/intermediate/commits_icvul_restricted.csv"
+INPUT_CSV = "data/intermediate/commits_icvul.csv"
 REPO_BASE_DIR = Path("repos")
 OUTPUT_PATH = "data/intermediate/churn_icvul_semantic.csv"
 
