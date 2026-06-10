@@ -4,6 +4,7 @@ from pathlib import Path
 from tqdm import tqdm
 import os
 from multiprocessing import Pool, cpu_count, Lock
+import signal
 
 from utils.semantic import get_string_matching_metrics, get_hunks_from_diff
 from utils.file import is_test_file, is_source_code
@@ -16,10 +17,14 @@ OUTPUT_PATH = "data/intermediate/churn_icvul_semantic.csv"
 # Global dictionary to hold locks per repository to prevent Git Lock issues
 repo_locks = {}
 
+def timeout_handler(signum, frame):
+    raise TimeoutError("Commit processing timed out")
+
 def init_pool(locks):
     """Initializes global locks inside background worker processes."""
     global repo_locks
     repo_locks = locks
+    signal.signal(signal.SIGALRM, timeout_handler)
 
 def process_single_row(row_dict):
     """
@@ -39,6 +44,7 @@ def process_single_row(row_dict):
 
     # Acquire the lock for THIS specific repository name before touching Git
     with repo_locks[project]:
+        signal.alarm(120)
         try:
             # traverse_commits for specific commit hash
             for c in Repository(repo_path_str, single=commit_id).traverse_commits():
@@ -70,10 +76,14 @@ def process_single_row(row_dict):
                         deleted += rem
                         
                     files += 1
-                    
+        except TimeoutError:
+            print(f"Timeout on commit {row_dict['commit_id']}, skipping")
+            return None 
         except Exception as e:
             print(f"Error in commit {commit_id}: {e}")
             return None
+        finally:
+            signal.alarm(0)
 
     if files > 0:
         return {
