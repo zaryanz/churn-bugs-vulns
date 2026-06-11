@@ -7,7 +7,6 @@ from multiprocessing import Pool, cpu_count
 from itertools import chain
 import multiprocessing as mp
 import signal
-import shutil
 
 from utils.diffstat import get_diffstat_metrics
 from utils.file import is_test_file, is_source_code
@@ -95,16 +94,11 @@ if __name__ == "__main__":
 
     num_workers = int(os.environ.get("SLURM_CPUS_PER_TASK", max(1, cpu_count() - 1)))
 
-    # Create one repo copy per worker
-    base_repo = Path("repos") / "linux"
-    worker_repos = []
-    print(f"Creating {num_workers} worker repo copies...")
-    for i in range(num_workers):
-        worker_repo = Path("repos") / f"linux_worker_{i}"
-        if not worker_repo.exists():
-            shutil.copytree(base_repo, worker_repo)
-        worker_repos.append(str(worker_repo))
-    print("Done copying.")
+    worker_repos = [
+        str(Path("repos") / f"linux_worker_{i}")
+        for i in range(num_workers)
+    ]
+    print(f"Using {num_workers} pre-existing worker repos")
 
     chunks = [
         (tasks[i::num_workers], worker_repos[i])
