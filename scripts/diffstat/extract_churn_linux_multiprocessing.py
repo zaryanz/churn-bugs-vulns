@@ -23,9 +23,14 @@ def init_pool():
 def process_chunk(args):
     commits, repo_path_str = args
     repo_path = Path(repo_path_str)
+    total = len(commits)
 
     results = []
-    for row_dict in commits:
+    for i, row_dict in enumerate(commits):
+        if i % 5 == 0:
+            pct = (i / total) * 100
+            print(f"Worker {repo_path.name}: {i}/{total} ({pct:.1f}%)", flush=True)
+        
         commit_id = row_dict['commit_id']
 
         if not repo_path.exists():
