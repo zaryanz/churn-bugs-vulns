@@ -104,40 +104,125 @@ def process_single_row(row_dict):
 
 
 if __name__ == "__main__":
-    # HPC Guardrail: Prevent silent deadlocks on Linux shared filesystems
+
+    import argparse
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--chunk",
+        type=int,
+        required=True,
+        help="Chunk number to process (0-based)"
+    )
+
+    parser.add_argument(
+        "--num-chunks",
+        type=int,
+        default=10,
+        help="Total number of chunks"
+    )
+
+    args = parser.parse_args()
+
+    chunk_id = args.chunk
+    num_chunks = args.num_chunks
+
+    # HPC Guardrail
     try:
         mp.set_start_method('forkserver')
     except RuntimeError:
         pass
 
-    # Load original dataset
-    df = pd.read_csv("data/intermediate/commits_dataset_linux.csv")
+    # -----------------------------
+    # Load and split dataset
+    # -----------------------------
+    df = pd.read_csv(
+        "data/intermediate/commits_dataset_linux.csv"
+    )
 
-    # df = df_full.groupby('commit_role', group_keys=False).sample(n=1000, random_state=42)
+    # Shuffle before splitting
+    df = df.sample(
+        frac=1,
+        random_state=42
+    ).reset_index(drop=True)
 
-    # Transform rows to a list of flat dicts
+    chunk_size = len(df) // num_chunks
+
+    start = chunk_id * chunk_size
+
+    if chunk_id == num_chunks - 1:
+        end = len(df)
+    else:
+        end = (chunk_id + 1) * chunk_size
+
+    df = df.iloc[start:end]
+
+    print(
+        f"Processing chunk "
+        f"{chunk_id + 1}/{num_chunks} "
+        f"({len(df):,} commits)"
+    )
+
     tasks = df.to_dict(orient='records')
 
-    # Create a single lock for the entire repository
+    # -----------------------------
+    # Multiprocessing setup
+    # -----------------------------
     single_repo_lock = Lock()
 
-    # Determine CPU worker allocation
-    num_workers = int(os.environ.get("SLURM_CPUS_PER_TASK", max(1, cpu_count() - 1)))
-    print(f"Spawning {num_workers} synchronized parallel workers to analyze {len(tasks)} Linux commits...")
+    num_workers = int(
+        os.environ.get(
+            "SLURM_CPUS_PER_TASK",
+            max(1, cpu_count() - 1)
+        )
+    )
+
+    print(
+        f"Spawning {num_workers} synchronized "
+        f"parallel workers to analyze "
+        f"{len(tasks)} Linux commits..."
+    )
 
     rows = []
-    # Pass the lock to the pool
-    with Pool(num_workers, initializer=init_pool, initargs=(single_repo_lock,)) as pool:
-        for result in tqdm(pool.imap(process_single_row, tasks), total=len(tasks), desc="Processing Linux Sample"):
+
+    with Pool(
+        num_workers,
+        initializer=init_pool,
+        initargs=(single_repo_lock,)
+    ) as pool:
+
+        for result in tqdm(
+            pool.imap(
+                process_single_row,
+                tasks
+            ),
+            total=len(tasks),
+            desc=f"Chunk {chunk_id}"
+        ):
+
             if result is not None:
                 rows.append(result)
 
-    # Convert results back to DataFrame and run original group tracking steps
     out = pd.DataFrame(rows)
-    out.to_csv(OUTPUT_PATH, index=False)
 
-    print("\nProcessing Complete. Sample stats:")
+    output_path = (
+        f"data/intermediate/"
+        f"churn_linux_semantic_chunk_{chunk_id}.csv"
+    )
+
+    out.to_csv(output_path, index=False)
+
+    print(
+        f"\nCompleted! Saved results for "
+        f"{len(out)} commits."
+    )
+
+    print(f"Output: {output_path}")
+
     if not out.empty:
-        print(out.groupby('commit_role')['lines_modified'].describe())
-    else:
-        print("No rows were processed successfully.")
+        print(
+            out.groupby('commit_role')[
+                'lines_modified'
+            ].describe()
+        )
