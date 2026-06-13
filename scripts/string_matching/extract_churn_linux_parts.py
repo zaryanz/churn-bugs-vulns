@@ -33,9 +33,6 @@ OUTPUT_PATH = f"data/intermediate/churn_linux_semantic_part_{part_idx}.csv"
 
 signal.signal(signal.SIGALRM, timeout_handler)
 
-if isinstance(df, np.ndarray):
-    df = pd.DataFrame(df)
-
 for _, r in tqdm(df.iterrows(), total=len(df), desc=f"Processing Linux Part {part_idx}"):
     repo_path = Path("repos") / r.project
     if not repo_path.exists():
