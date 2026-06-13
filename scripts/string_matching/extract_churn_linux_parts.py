@@ -1,22 +1,39 @@
 import pandas as pd
+import sys
+import numpy as np
 from pydriller import Repository
 from pathlib import Path
 from tqdm import tqdm
+import signal
 
 from utils.semantic import get_string_matching_metrics, get_hunks_from_diff
 from utils.file import is_test_file, is_source_code
 
+def timeout_handler(signum, frame):
+    raise TimeoutError("Commit processing timed out!")
+
+# Check for valid command line argument (0-9)
+if len(sys.argv) < 2 or not sys.argv[1].isdigit() or not (0 <= int(sys.argv[1]) <= 9):
+    print("Error: Please provide a part number between 0 and 9. Example: python script.py 0")
+    sys.exit(1)
+
+part_idx = int(sys.argv[1])
+
 # Load original dataset
 df_full = pd.read_csv("data/intermediate/commits_dataset_linux.csv")
 
-# 2. CHANGE: Sample 1000 commits (500 BFC / 500 BIC) to match your other datasets
-# df = df_full.groupby('commit_role', group_keys=False).sample(n=5000, random_state=42)
+# Split dataframe into 10 parts and select the requested one
+df_parts = np.array_split(df_full, 10)
+df = df_parts[part_idx]
 
 rows = []
 
-OUTPUT_PATH = "data/intermediate/churn_linux_semantic.csv"
+# Dynamically change output path based on the part number
+OUTPUT_PATH = f"data/intermediate/churn_linux_semantic_part_{part_idx}.csv"
 
-for _, r in tqdm(df.iterrows(), total=len(df), desc="Processing Linux Sample"):
+signal.signal(signal.SIGALRM, timeout_handler)
+
+for _, r in tqdm(df.iterrows(), total=len(df), desc=f"Processing Linux Part {part_idx}"):
     repo_path = Path("repos") / r.project
     if not repo_path.exists():
         continue
@@ -26,6 +43,8 @@ for _, r in tqdm(df.iterrows(), total=len(df), desc="Processing Linux Sample"):
     added = deleted = modified = files = 0
 
     try:
+        signal.alarm(120)
+
         for c in Repository(repo_path, single=r.commit_id).traverse_commits():
             for m in c.modified_files:
                 file_path = m.new_path if m.new_path else ""
@@ -54,10 +73,14 @@ for _, r in tqdm(df.iterrows(), total=len(df), desc="Processing Linux Sample"):
                     deleted += rem
                     
                 files += 1
-                
+    except TimeoutError:
+        print(f"\nSkipping commit {r.commit_id} because it took longer than 120 seconds.")
+        continue     
     except Exception as e:
         print(f"An error occurred with commit {r.commit_id}: {e}")
         continue
+    finally:
+        signal.alarm(0)
 
     rows.append({
         "commit_id": r.commit_id,
