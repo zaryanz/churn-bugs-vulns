@@ -5,6 +5,7 @@ from pydriller import Repository
 from pathlib import Path
 from tqdm import tqdm
 import signal
+import traceback
 
 from utils.semantic import get_string_matching_metrics, get_hunks_from_diff
 from utils.file import is_test_file, is_source_code
@@ -74,6 +75,9 @@ for _, r in tqdm(df.iterrows(), total=len(df), desc=f"Processing Linux Part {par
         continue     
     except Exception as e:
         print(f"An error occurred with commit {r.commit_id}: {e}")
+        error_msg = traceback.format_exc()
+        print(error_msg)
+        print("-" * 40)
         continue
     finally:
         signal.alarm(0)
