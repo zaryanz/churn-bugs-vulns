@@ -1,0 +1,2 @@
+/var/spool/slurmd/job5964451/slurm_script: line 18: activate: No such file or directory
+[2026-06-13T18:58:22.647] error: *** JOB 5964451 ON g218 CANCELLED AT 2026-06-13T18:58:22 DUE to SIGNAL Terminated ***

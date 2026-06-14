@@ -1,0 +1,35 @@
+Job started: Sat Jun 13 19:11:13 CEST 2026
+Node: g175
+CPUs allocated: 1
+Chunk: 2
+An error occurred with commit e091b836a3baee4c8b1423a969589196b88a9e06: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit b50bb8ba369cdc8814e82558117711c12ef3af3d: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 9e5f7d26a4c087f34e540a5a6f853f8d93d51448: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 6840615f85f6046039ebc4989870ddb12892b7fc: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit b515d097053a71d624e0c5840b42cd4caa653941: Cmd('git') failed due to: exit code(128)
+  cmdline: git diff-tree 99ac6018821253ec67f466086afb63fc18ea48e2 b515d097053a71d624e0c5840b42cd4caa653941 -r --abbrev=40 --full-index -M -p --no-ext-diff --no-color
+An error occurred with commit 146054090b0859b28fc39015c7704ccc3c3a347f: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 730affed24bffcd1eebd5903171960f5ff9f1f22: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 827f02842e40ea2e00f401e8f4cb1bccf3b8cd86: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 08bdbd39b58474d762242e1fadb7f2eb9ffcca71: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit d36d4a1d75d2a8bd14ec00d5cb0ce166f6886146: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+
+Skipping commit 32ec3960175e58a914fc242b66dfe33e9059568f because it took longer than 120 seconds.
+An error occurred with commit 828db68f4ff1ab6982a36a56522b585160dc8c8e: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 879526030c8b5e8bd786a6408730893b9b2958ea: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 359f01d1816fc1ea0161e6c30722bef1ed6b8abb: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit b9c0ebb867d67cc4e9e1a7a2abf0ac9a2cc02051: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 5665bc35c1ed917ac8fd06cb651317bb47a65b10: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 39b19c63a39a2de6516383774a529287f04a243e: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 1d8e5b0f3f2c6d05697f8192aac7255e6be1e715: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit b9b34ddbe2076ade359cd5ce7537d5ed019e9807: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+An error occurred with commit 04c4f2ee3f68c9a4bf1653d15f1a9a435ae33f7a: Cmd('git') failed due to: exit code(128)
+  cmdline: git diff-tree 315f02c60d9425b38eb8ad7f21b8a35e40db23f9 04c4f2ee3f68c9a4bf1653d15f1a9a435ae33f7a -r --abbrev=40 --full-index -M -p --no-ext-diff --no-color
+An error occurred with commit c26844eda9d4fdbd266660e3b3de2d0270e3a1ed: Lock for file '/dev/shm/linux/.git/config' did already exist, delete '/dev/shm/linux/.git/config.lock' in case the lock is illegal
+
+Processing Complete. Sample stats:
+              count      mean        std  min  25%  50%  75%     max
+commit_role                                                         
+BFC          6991.0  1.952796   4.947022  0.0  0.0  1.0  2.0   120.0
+BIC          5455.0  9.088543  40.113677  0.0  0.0  1.0  7.0  1783.0
+Job finished: Sat Jun 13 21:38:31 CEST 2026

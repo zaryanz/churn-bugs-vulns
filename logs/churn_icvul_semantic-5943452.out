@@ -1,0 +1,73 @@
+Job started: Wed Jun 10 13:01:16 CEST 2026
+Node: g217
+CPUs allocated: 32
+Spawning 32 workers to process 13925 items across 732 repos Safely...
+Error in commit 4397b3376dc4e4cb1c991d0aed61ce6482614196: SHA b'4397b3376dc4e4cb1c991d0aed61ce6482614196' could not be resolved, git returned: b'4397b3376dc4e4cb1c991d0aed61ce6482614196 missing'
+Error in commit 7c63e53bb2af0aae9097fd2edfd6a9ba9d453e97: SHA b'7c63e53bb2af0aae9097fd2edfd6a9ba9d453e97' could not be resolved, git returned: b'7c63e53bb2af0aae9097fd2edfd6a9ba9d453e97 missing'
+Error in commit c08ebc6eeb4d68609d2b7ba3e7eb97e66a24da00: SHA b'c08ebc6eeb4d68609d2b7ba3e7eb97e66a24da00' could not be resolved, git returned: b'c08ebc6eeb4d68609d2b7ba3e7eb97e66a24da00 missing'
+Error in commit 079e794b1cb14b5c9e70966ebaa657e32c144881: SHA b'079e794b1cb14b5c9e70966ebaa657e32c144881' could not be resolved, git returned: b'079e794b1cb14b5c9e70966ebaa657e32c144881 missing'
+Error in commit fe8b7f31db687f8b9992864b82c93d22833019c7: SHA b'fe8b7f31db687f8b9992864b82c93d22833019c7' could not be resolved, git returned: b'fe8b7f31db687f8b9992864b82c93d22833019c7 missing'
+Error in commit 863d37ea66d5c960db08d6f4a2cbd2518f0f80d1: SHA b'863d37ea66d5c960db08d6f4a2cbd2518f0f80d1' could not be resolved, git returned: b'863d37ea66d5c960db08d6f4a2cbd2518f0f80d1 missing'
+Error in commit b173ac05993f634a42be3d3535e1b158de0c3372: SHA b'b173ac05993f634a42be3d3535e1b158de0c3372' could not be resolved, git returned: b'b173ac05993f634a42be3d3535e1b158de0c3372 missing'
+Timeout on commit 52d960542b4d5fdf2bd06735d0dbf7934cf2ec12, skipping
+Error in commit de4f8c196106033e4c372dce3e91b9d42b0b9444: SHA b'de4f8c196106033e4c372dce3e91b9d42b0b9444' could not be resolved, git returned: b'de4f8c196106033e4c372dce3e91b9d42b0b9444 missing'
+Error in commit 29c8abce0da56b536542f76a9ddfebdaab5b2943: SHA b'29c8abce0da56b536542f76a9ddfebdaab5b2943' could not be resolved, git returned: b'29c8abce0da56b536542f76a9ddfebdaab5b2943 missing'
+Error in commit 1aea203eb36409ce6903b9e41fe7cb70030e8750: SHA b'1aea203eb36409ce6903b9e41fe7cb70030e8750' could not be resolved, git returned: b'1aea203eb36409ce6903b9e41fe7cb70030e8750 missing'
+Error in commit 5c8b534f6e97db7ac0e0e579331213aa25c173ab: SHA b'5c8b534f6e97db7ac0e0e579331213aa25c173ab' could not be resolved, git returned: b'5c8b534f6e97db7ac0e0e579331213aa25c173ab missing'
+Timeout on commit 8de79b10a6d2a41748b76b1384ec939fe3673145, skipping
+Error in commit 7ba1409a1aee5925180de546057ddd84ff267947: SHA b'7ba1409a1aee5925180de546057ddd84ff267947' could not be resolved, git returned: b'7ba1409a1aee5925180de546057ddd84ff267947 missing'
+Error in commit 1d42157438866e90c767c84c9902f5ec61c93e33: SHA b'1d42157438866e90c767c84c9902f5ec61c93e33' could not be resolved, git returned: b'1d42157438866e90c767c84c9902f5ec61c93e33 missing'
+Error in commit 88c98c910acccab694b3afb6d36d70ca429118a6: SHA b'88c98c910acccab694b3afb6d36d70ca429118a6' could not be resolved, git returned: b'88c98c910acccab694b3afb6d36d70ca429118a6 missing'
+Error in commit 0ab4a5ef6b1b3aab967e782fa9d5cb60d1cbcc5f: SHA b'0ab4a5ef6b1b3aab967e782fa9d5cb60d1cbcc5f' could not be resolved, git returned: b'0ab4a5ef6b1b3aab967e782fa9d5cb60d1cbcc5f missing'
+Error in commit d624f2c550e862fd016eba9cdff7187d2c4757dc: SHA b'd624f2c550e862fd016eba9cdff7187d2c4757dc' could not be resolved, git returned: b'd624f2c550e862fd016eba9cdff7187d2c4757dc missing'
+Error in commit f39ad9bab1f327062958b2750bf1f5609a9ee991: SHA b'f39ad9bab1f327062958b2750bf1f5609a9ee991' could not be resolved, git returned: b'f39ad9bab1f327062958b2750bf1f5609a9ee991 missing'
+Error in commit 20ab946f34b1d9727ff08c733b2006e84fd79349: Cmd('git') failed due to: exit code(128)
+  cmdline: git diff-tree 314eba98b2f2755cb26ed7a268d3fe83a7626efa 20ab946f34b1d9727ff08c733b2006e84fd79349 -r --abbrev=40 --full-index -M -p --no-ext-diff --no-color
+Timeout on commit 9b063d5995945bb77a2fcaa4bcb8a63adc539249, skipping
+Error in commit 8e972c5e94b460379fe0c7d20209c16df81538a5: SHA b'8e972c5e94b460379fe0c7d20209c16df81538a5' could not be resolved, git returned: b'8e972c5e94b460379fe0c7d20209c16df81538a5 missing'
+Error in commit 3caeb16c31a3ed62d744e2aaf01d684f7991051a: SHA b'3caeb16c31a3ed62d744e2aaf01d684f7991051a' could not be resolved, git returned: b'3caeb16c31a3ed62d744e2aaf01d684f7991051a missing'
+Error in commit 4f01669c7c41c9184f3cce9a3cf1b2ebf6201742: SHA b'4f01669c7c41c9184f3cce9a3cf1b2ebf6201742' could not be resolved, git returned: b'4f01669c7c41c9184f3cce9a3cf1b2ebf6201742 missing'
+Error in commit 7a1aac3343af85b4af4df5f8844946eaa27394ab: SHA b'7a1aac3343af85b4af4df5f8844946eaa27394ab' could not be resolved, git returned: b'7a1aac3343af85b4af4df5f8844946eaa27394ab missing'
+Error in commit 22c1bd191f0acbf11f0c0fbea1845d9bf9dcd47e: SHA b'22c1bd191f0acbf11f0c0fbea1845d9bf9dcd47e' could not be resolved, git returned: b'22c1bd191f0acbf11f0c0fbea1845d9bf9dcd47e missing'
+Timeout on commit 81a67395336bdf114dc3ffbf4321d39ae26fce05, skipping
+Error in commit 342f292c27973c9df5f631a38bd12f14a9c5cdc2: SHA b'342f292c27973c9df5f631a38bd12f14a9c5cdc2' could not be resolved, git returned: b'342f292c27973c9df5f631a38bd12f14a9c5cdc2 missing'
+Error in commit bac5831b355f916e0696b7bbcccfc51c057b729a: SHA b'bac5831b355f916e0696b7bbcccfc51c057b729a' could not be resolved, git returned: b'bac5831b355f916e0696b7bbcccfc51c057b729a missing'
+Error in commit ceefcf883923da7f37ec6515b2ecfc545c75e53f: SHA b'ceefcf883923da7f37ec6515b2ecfc545c75e53f' could not be resolved, git returned: b'ceefcf883923da7f37ec6515b2ecfc545c75e53f missing'
+Timeout on commit 72ca88f49c1b7f6678a66c09fa5fe5506623ed35, skipping
+Error in commit dc070da861a015d3c97488fdcca6063b44d47a7b: SHA b'dc070da861a015d3c97488fdcca6063b44d47a7b' could not be resolved, git returned: b'dc070da861a015d3c97488fdcca6063b44d47a7b missing'
+Error in commit ad787a920ccb9dacf5b01d52bce36ac14a5ecd89: SHA b'ad787a920ccb9dacf5b01d52bce36ac14a5ecd89' could not be resolved, git returned: b'ad787a920ccb9dacf5b01d52bce36ac14a5ecd89 missing'
+Timeout on commit dda766ac0645c1e7b17dd3e8e988e753b14de5b2, skipping
+Error in commit 20ac3662f137dbf7f42d5295590069a7d3b1166b: SHA b'20ac3662f137dbf7f42d5295590069a7d3b1166b' could not be resolved, git returned: b'20ac3662f137dbf7f42d5295590069a7d3b1166b missing'
+Timeout on commit 0f113f3ee4d629ef9a4a30911b22b224772085e5, skipping
+Error in commit 089f7c0bc28d399b0420aa6ef058e4c1c120b2ae: SHA b'089f7c0bc28d399b0420aa6ef058e4c1c120b2ae' could not be resolved, git returned: b'089f7c0bc28d399b0420aa6ef058e4c1c120b2ae missing'
+Timeout on commit 8853727eaee6609fdb94a0357ab2deeec1ea0397, skipping
+Timeout on commit d09fd3e421849d105a468b52768776e95cb6bdd9, skipping
+Error in commit 000030feb7a30f193197f1aab8a7b04a26b42735: SHA b'000030feb7a30f193197f1aab8a7b04a26b42735' could not be resolved, git returned: b'000030feb7a30f193197f1aab8a7b04a26b42735 missing'
+Error in commit e2d10a1e32d01f71aaadd81169bcb9ae86c5d6b8: SHA b'e2d10a1e32d01f71aaadd81169bcb9ae86c5d6b8' could not be resolved, git returned: b'e2d10a1e32d01f71aaadd81169bcb9ae86c5d6b8 missing'
+Timeout on commit 718178c68a1c863dd1a2eac7aea326a789d3bc52, skipping
+Error in commit d7d7764cb07c8a1872804321302ef93bf62cba05: SHA b'd7d7764cb07c8a1872804321302ef93bf62cba05' could not be resolved, git returned: b'd7d7764cb07c8a1872804321302ef93bf62cba05 missing'
+Error in commit db3a785241fda63bf53f0ec12bb519aa5210de19: SHA b'db3a785241fda63bf53f0ec12bb519aa5210de19' could not be resolved, git returned: b'db3a785241fda63bf53f0ec12bb519aa5210de19 missing'
+Error in commit 535a786f124b739e3c857529cecc29e4eeb79778: SHA b'535a786f124b739e3c857529cecc29e4eeb79778' could not be resolved, git returned: b'535a786f124b739e3c857529cecc29e4eeb79778 missing'
+Error in commit a2eca000e5a4337fb79ee8215d06413785653184: SHA b'a2eca000e5a4337fb79ee8215d06413785653184' could not be resolved, git returned: b'a2eca000e5a4337fb79ee8215d06413785653184 missing'
+Error in commit 78cc408369bdbbd440196c93574098d1482efbce: SHA b'78cc408369bdbbd440196c93574098d1482efbce' could not be resolved, git returned: b'78cc408369bdbbd440196c93574098d1482efbce missing'
+Error in commit f61fe5f6a0419ef4a88d46a128052f2e8352e85d: SHA b'f61fe5f6a0419ef4a88d46a128052f2e8352e85d' could not be resolved, git returned: b'f61fe5f6a0419ef4a88d46a128052f2e8352e85d missing'
+Error in commit 85a370c79afeb45a97842b0959366af5236e9023: SHA b'85a370c79afeb45a97842b0959366af5236e9023' could not be resolved, git returned: b'85a370c79afeb45a97842b0959366af5236e9023 missing'
+Timeout on commit 89f732529f1ac7bd39202c1b160a8f1bda3161f4, skipping
+Error in commit c5759e7b76f5bf844be6c6641cc1b356bbc83869: SHA b'c5759e7b76f5bf844be6c6641cc1b356bbc83869' could not be resolved, git returned: b'c5759e7b76f5bf844be6c6641cc1b356bbc83869 missing'
+Error in commit 88cf60a3ed4a2b40d71a1c2ced72fa3902a30967: SHA b'88cf60a3ed4a2b40d71a1c2ced72fa3902a30967' could not be resolved, git returned: b'88cf60a3ed4a2b40d71a1c2ced72fa3902a30967 missing'
+Error in commit 8494e78010d8917a4165d877045be34ddc2dda22: SHA b'8494e78010d8917a4165d877045be34ddc2dda22' could not be resolved, git returned: b'8494e78010d8917a4165d877045be34ddc2dda22 missing'
+Error in commit bbe68db10ab8a80c29db383e4dfe14f6eafaf993: SHA b'bbe68db10ab8a80c29db383e4dfe14f6eafaf993' could not be resolved, git returned: b'bbe68db10ab8a80c29db383e4dfe14f6eafaf993 missing'
+Error in commit 5f4087aabb5d03c42738b320af0fc60e9df4d1f7: SHA b'5f4087aabb5d03c42738b320af0fc60e9df4d1f7' could not be resolved, git returned: b'5f4087aabb5d03c42738b320af0fc60e9df4d1f7 missing'
+Timeout on commit aaaea14214ed46ac60cf7ef5766374f660b05777, skipping
+Error in commit b65574bef233474e915fdf18614aa211e31cc6c2: SHA b'b65574bef233474e915fdf18614aa211e31cc6c2' could not be resolved, git returned: b'b65574bef233474e915fdf18614aa211e31cc6c2 missing'
+Timeout on commit e20413bf6b872a8c23f1704a89295c5897347c9d, skipping
+Error in commit 71aaeaf020340412b8d012fe23a556c0420eda5f: SHA b'71aaeaf020340412b8d012fe23a556c0420eda5f' could not be resolved, git returned: b'71aaeaf020340412b8d012fe23a556c0420eda5f missing'
+Error in commit c18263e0e0769faee96a5d0ee04b750c442783c6: SHA b'c18263e0e0769faee96a5d0ee04b750c442783c6' could not be resolved, git returned: b'c18263e0e0769faee96a5d0ee04b750c442783c6 missing'
+Error in commit b248763e4878ef12d5835ece6600be8334f67da1: SHA b'b248763e4878ef12d5835ece6600be8334f67da1' could not be resolved, git returned: b'b248763e4878ef12d5835ece6600be8334f67da1 missing'
+Error in commit 89d0257841f2c119ef09d2bccd1458329ba91e5f: SHA b'89d0257841f2c119ef09d2bccd1458329ba91e5f' could not be resolved, git returned: b'89d0257841f2c119ef09d2bccd1458329ba91e5f missing'
+Error in commit 9fb34542d1ba6c737879a4c1c434371359a497d1: SHA b'9fb34542d1ba6c737879a4c1c434371359a497d1' could not be resolved, git returned: b'9fb34542d1ba6c737879a4c1c434371359a497d1 missing'
+Error in commit b4063bf756272254b160b6d1bd6e9a3f8e16cc71: SHA b'b4063bf756272254b160b6d1bd6e9a3f8e16cc71' could not be resolved, git returned: b'b4063bf756272254b160b6d1bd6e9a3f8e16cc71 missing'
+Error in commit 97b223f8891b96d6fc054df5ab1d5a1a545da2a3: SHA b'97b223f8891b96d6fc054df5ab1d5a1a545da2a3' could not be resolved, git returned: b'97b223f8891b96d6fc054df5ab1d5a1a545da2a3 missing'
+
+Completed! Saved 12985 commits to data/intermediate/churn_icvul_semantic.csv
+Job finished: Wed Jun 10 15:22:55 CEST 2026

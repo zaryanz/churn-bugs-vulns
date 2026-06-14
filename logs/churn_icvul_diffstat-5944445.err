@@ -1,0 +1,5 @@
+/var/spool/slurmd/job5944445/slurm_script: line 18: cd: /fibus/fs2/02/cgk3480/diffstat-1.68: No such file or directory
+make: *** No rule to make target 'clean'.  Stop.
+diffstat: /lib64/libc.so.6: version `GLIBC_2.33' not found (required by diffstat)
+diffstat: /lib64/libc.so.6: version `GLIBC_2.34' not found (required by diffstat)
+Processing ICVul:   0%|          | 0/10 [00:00<?, ?it/s]Processing ICVul:  40%|████      | 4/10 [00:00<00:00, 38.80it/s]Processing ICVul:  80%|████████  | 8/10 [00:00<00:00, 34.94it/s]Processing ICVul: 100%|██████████| 10/10 [00:00<00:00, 34.64it/s]

@@ -1,0 +1,461 @@
+Job started: Thu Jun 11 11:51:52 CEST 2026
+Node: g219
+CPUs allocated: 32
+Recompiling diffstat on compute node...
+rm -f *.o core *~ *.out *.err *.BAK *.atac
+rm -f diffstat
+rm -f diffstat.html
+rm -f diffstat.pdf
+rm -f diffstat.ps
+rm -f diffstat.txt
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+Configuring for linux-gnu
+checking for gcc... gcc
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for executable suffix... 
+checking for object suffix... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking version of gcc... 8.5.0
+checking if this is really Intel C compiler... no
+checking if this is really Clang C compiler... no
+checking for gcc option to accept ANSI C... none needed
+checking $CFLAGS variable... ok
+checking $CC variable... ok
+checking for a BSD compatible install... /usr/bin/install -c
+checking for lint... no
+checking for cppcheck... no
+checking for splint... no
+checking if filesystem supports mixed-case filenames... yes
+checking for exctags... no
+checking for ctags... no
+checking for exetags... no
+checking for etags... etags
+checking for ctags... no
+checking for etags... yes
+checking if you want to see long compiling messages... yes
+checking target system type... x86_64-pc-linux-gnu
+(cached) Configuring for linux-gnu
+checking for install-prefix... no
+checking for PATH separator... :
+checking for bzcat... /fibus/fs2/02/cgk3480/.conda/envs/churn-env/bin/bzcat
+checking for bzip2... /fibus/fs2/02/cgk3480/.conda/envs/churn-env/bin/bzip2
+checking for compress... no
+checking for compress... no
+checking for gzip... /usr/bin/gzip
+checking for gzip... /usr/bin/gzip
+checking for lzcat... /fibus/fs2/02/cgk3480/.conda/envs/churn-env/bin/lzcat
+checking for pcat... no
+checking for pcat... no
+checking for uncompress.real... no
+checking for uncompress.real... no
+checking for uncompress... no
+checking for xz... /fibus/fs2/02/cgk3480/.conda/envs/churn-env/bin/xz
+checking for zcat... /usr/bin/zcat
+checking for zstd... no
+checking for zstd... no
+checking if the POSIX test-macros are already defined... no
+checking if this is the GNU C library... yes
+checking if _DEFAULT_SOURCE can be used as a basis... yes
+checking if _XOPEN_SOURCE=500 works with _DEFAULT_SOURCE... yes
+checking if _XOPEN_SOURCE really is set... yes
+checking for ggrep... no
+checking for grep... grep
+checking for fgrep... grep -F
+checking if you want to use C11 _Noreturn feature... no
+checking if you want to check for gcc warnings... no
+checking for an ANSI C-conforming const... yes
+checking for egrep... grep -E
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether exit is declared... yes
+checking for ioctl.h... no
+checking for search.h... yes
+checking for sys/ioctl.h... yes
+checking for size_t... yes
+checking for setlocale()... yes
+checking for mkdtemp... yes
+checking for opendir... yes
+checking for strdup... yes
+checking for tsearch... yes
+checking for lstat... yes 
+checking for getopt.h... yes
+checking for header declaring getopt variables... unistd.h
+checking for getopt... yes
+checking for popen... yes
+checking for conflicting prototype for popen... yes
+checking for mbsrtowcs and wcwidth... yes
+checking for getc_unlocked... yes
+checking if we should define _REENTRANT... no
+checking for nonconflicting termios.h... yes
+checking for groff... /usr/bin/groff
+checking for nroff... /usr/bin/nroff
+checking for tbl... /usr/bin/tbl
+checking for man2html... /usr/bin/man2html
+checking for the modified Earl Hood script... no
+checking for program to convert manpage to html... /usr/bin/groff
+checking if you want to use dmalloc for testing... no
+checking if you want to use dbmalloc for testing... no
+checking if you want to use valgrind for testing... no
+checking if you want to perform memory-leak testing... no
+configure: creating ./config.status
+config.status: creating makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+gcc -c -I. -I. -DHAVE_CONFIG_H -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=500 -g -O2  diffstat.c
+gcc  -o diffstat diffstat.o  
+mkdir -p /fibus/fs2/02/cgk3480/.conda/envs/churn-env/bin /fibus/fs2/02/cgk3480/.conda/envs/churn-env/share/man/man1
+/usr/bin/install -c diffstat /fibus/fs2/02/cgk3480/.conda/envs/churn-env/bin/diffstat
+/usr/bin/install -c -m 644 ./diffstat.1 /fibus/fs2/02/cgk3480/.conda/envs/churn-env/share/man/man1/diffstat.1
+diffstat: /fibus/fs2/02/cgk3480/.conda/envs/churn-env/bin/diffstat
+diffstat version: diffstat version 1.68
+Using 32 pre-existing worker repos
+Spawning 32 workers across 100 commits (~4 each)...
+Worker linux_worker_0: 0/4 (0.0%)
+Worker linux_worker_1: 0/4 (0.0%)
+Worker linux_worker_2: 0/4 (0.0%)
+Worker linux_worker_3: 0/4 (0.0%)
+Worker linux_worker_4: 0/3 (0.0%)
+Worker linux_worker_5: 0/3 (0.0%)
+Worker linux_worker_6: 0/3 (0.0%)
+Worker linux_worker_7: 0/3 (0.0%)
+Worker linux_worker_8: 0/3 (0.0%)
+Worker linux_worker_9: 0/3 (0.0%)
+Worker linux_worker_10: 0/3 (0.0%)
+Worker linux_worker_11: 0/3 (0.0%)
+Worker linux_worker_12: 0/3 (0.0%)
+Worker linux_worker_13: 0/3 (0.0%)
+Worker linux_worker_14: 0/3 (0.0%)
+Worker linux_worker_15: 0/3 (0.0%)
+Worker linux_worker_16: 0/3 (0.0%)
+Worker linux_worker_17: 0/3 (0.0%)
+Worker linux_worker_18: 0/3 (0.0%)
+Worker linux_worker_19: 0/3 (0.0%)
+Worker linux_worker_20: 0/3 (0.0%)
+Worker linux_worker_21: 0/3 (0.0%)
+Worker linux_worker_22: 0/3 (0.0%)
+Worker linux_worker_23: 0/3 (0.0%)
+Worker linux_worker_24: 0/3 (0.0%)
+Worker linux_worker_25: 0/3 (0.0%)
+Worker linux_worker_26: 0/3 (0.0%)
+Worker linux_worker_27: 0/3 (0.0%)
+Worker linux_worker_28: 0/3 (0.0%)
+Worker linux_worker_29: 0/3 (0.0%)
+Worker linux_worker_30: 0/3 (0.0%)
+Worker linux_worker_31: 0/3 (0.0%)
+Commit 0edefddbae396e50eb7887d279d0c4bb4d7a6384: 1 modified files
+  -> add=0, rem=1, mod=0
+Commit 45939ce292b4b11159719faaf60aba7d58d5fe33: 1 modified files
+  -> add=2, rem=0, mod=0
+Commit ff42df49e75f053a8a6b4c2533100cdcc23afe69: 1 modified files
+  -> add=7, rem=0, mod=1
+Commit 72569b7be461ad563c8118c50f26692e53a189bc: 7 modified files
+  -> add=0, rem=0, mod=4
+  -> add=0, rem=0, mod=4
+  -> add=0, rem=0, mod=12
+  -> add=0, rem=0, mod=10
+  -> add=0, rem=0, mod=1
+  -> add=0, rem=0, mod=9
+  -> add=0, rem=0, mod=9
+Commit e28adc3bf34e434b30e8d063df4823ba0f3e0529: 1 modified files
+  -> add=7, rem=0, mod=1
+Commit 148d31e38fb37ba442f9b554325114b9e80cf336: 1 modified files
+  -> add=2, rem=0, mod=0
+Commit 74a56f2a4a9ec72ef1daceeb2dda8b41370c1419: 1 modified files
+  -> add=0, rem=1, mod=0
+Commit fd8d2702791a970c751f8b526a17d8e725a05b46: 1 modified files
+  -> add=1, rem=0, mod=2
+Commit 0ec13aff058a82426c8d44b688c804cc4a5a0a3d: 1 modified files
+  -> add=30, rem=0, mod=8
+Commit 36126f5309b5054c2a57f7c603a6f8da1f4800d4: 1 modified files
+  -> add=0, rem=4, mod=1
+Commit 2908249f3878a591f7918368fdf0b7b0a6c3158c: 2 modified files
+  -> add=0, rem=0, mod=1
+  -> add=0, rem=0, mod=1
+Commit f5c7e8425f18fdb9bdb7d13340651d7876890329: 1 modified files
+  -> add=16, rem=7, mod=3
+Commit a39caac02f2f5819d39f37d7987babe19fcafe21: 1 modified files
+Commit 8219efd08a0aa1d7944bdb66d84ba57549258968: 1 modified files
+  -> add=0, rem=0, mod=1
+Commit 7ab72c597356be1e7f0f3d856e54ce78527f43c8: 1 modified files
+Commit a2948b17f6b936fc52f86c0f92c46d2f91928b79: 1 modified files
+  -> add=1, rem=0, mod=1
+  -> add=5, rem=0, mod=2
+Commit abc21649b3e5c34b143bf86f0c78e33d5815e250: 1 modified files
+  -> add=0, rem=2, mod=0
+Commit 6178aed011a31b7d242b80ed3e83fcc9b67444e1: 1 modified files
+  -> add=0, rem=3, mod=3
+Commit db1fc97ca0c0d3fdeeadf314d99a26188438940a: 2 modified files
+  -> add=1, rem=0, mod=2
+  -> add=1, rem=0, mod=1
+Commit ca71de6ba7c18a3a1576e04f7ed8d8508ceba4c9: 1 modified files
+  -> add=1, rem=1, mod=0
+Commit 7313f5a93d2017f789909a7a727a6cab48ea6d20: 1 modified files
+  -> add=0, rem=0, mod=1
+Commit 8d73b2aeb8088517b0895f209b68237ea1bc1c02: 1 modified files
+  -> add=0, rem=14, mod=13
+Commit 537a50574175a2b68b0612ffb48cb044a394c7b4: 6 modified files
+  -> add=1042, rem=0, mod=0
+  -> add=96, rem=0, mod=0
+  -> add=12, rem=0, mod=0
+  -> add=7, rem=0, mod=0
+  -> add=106, rem=0, mod=0
+Commit 05c773f52b96ef3fbc7d9bfa21caadc6247ef7a8: 5 modified files
+  -> add=4, rem=0, mod=1
+  -> add=16, rem=2, mod=4
+  -> add=158, rem=0, mod=2
+  -> add=3, rem=8, mod=2
+Commit 2f47d58043110b0aeac1952494db668fc0fc7c0a: 4 modified files
+  -> add=9, rem=0, mod=0
+  -> add=603, rem=218, mod=412
+  -> add=0, rem=26, mod=9
+  -> add=75, rem=19, mod=10
+  -> add=6, rem=0, mod=1
+Commit 99ba2b5aba24e022683a7db63204f9e306fe7ab9: 2 modified files
+  -> add=15, rem=0, mod=0
+  -> add=2, rem=0, mod=1
+Commit 16d83a540ca4e7f1ebb2b3756869b77451d31414: 1 modified files
+Commit 3c1c0f5dc80bbde5baef2403cc6a0d33c9824d2d: 1 modified files
+  -> add=0, rem=0, mod=1
+  -> add=4, rem=7, mod=1
+Commit 5927268f5a04c3b25683e52a0017aa5a9e8eee70: 1 modified files
+  -> add=10, rem=0, mod=1
+Commit 6e37ec8825a113bc2dd1b280be10e5ac6eb4f6b1: 1 modified files
+  -> add=2, rem=2, mod=1
+Commit 398391071f2576bbc6351bcb92c78fc432190ac3: 6 modified files
+  -> add=22, rem=4, mod=26
+  -> add=1, rem=2, mod=1
+  -> add=27, rem=12, mod=16
+  -> add=0, rem=2, mod=0
+  -> add=0, rem=0, mod=1
+Commit 4c3eb3ca13966508bcb64f39dcdef48be22f1731: 8 modified files
+  -> add=0, rem=43, mod=3
+Commit 8e695328a1006b7bab2d972e7d0111fa6e6faf51: 1 modified files
+  -> add=10, rem=0, mod=0
+  -> add=7, rem=0, mod=2
+  -> add=75, rem=0, mod=12
+  -> add=49, rem=0, mod=15
+  -> add=10, rem=0, mod=0
+  -> add=1, rem=0, mod=0
+  -> add=19, rem=0, mod=0
+  -> add=1, rem=0, mod=0
+  -> add=0, rem=0, mod=1
+Commit 96cb8e3313c7a12e026c1ed510522ae6f6023875: 2 modified files
+  -> add=542, rem=0, mod=0
+  -> add=253, rem=0, mod=0
+Commit 83621b7df6a646e550fd3d36db2e301cf9a5096b: 1 modified files
+  -> add=0, rem=0, mod=2
+Commit 9eb8cd2b0780bca0719e754e7bdcf5f368f001bd: 1 modified files
+  -> add=6, rem=0, mod=1
+Commit 93bc8ac49e82a329160604556b805b7fa614ff9e: 1 modified files
+  -> add=0, rem=1, mod=7
+Commit c362272bdea32bf048d6916b0a2dc485eb9cf787: 1 modified files
+Commit dcd6589b11d3b1e71f516a87a7b9646ed356b4c0: 1 modified files
+  -> add=19, rem=22, mod=7
+  -> add=0, rem=0, mod=1
+Commit 37a3a3278516eae364006d5597f2b9d40580a450: 1 modified files
+Commit d853f1d3c900cc16758b12853375c1ab888fae65: 1 modified files
+  -> add=1, rem=0, mod=1
+Commit 2464bc7c2897b7549146a743045089d3aea7b85b: 1 modified files
+  -> add=0, rem=1, mod=0
+Commit f25247d88708ff0666573541923a7339845403de: 1 modified files
+  -> add=1, rem=0, mod=8
+Commit f4c7fa39415da6db1fa0bc26162ac23a0fbae8bb: 1 modified files
+Commit fdba608f15e2427419997b0898750a49a735afcb: 1 modified files
+  -> add=0, rem=1, mod=1
+Commit c645e4b80c97adae029e655eccd26644b958f4b6: 2 modified files
+  -> add=0, rem=0, mod=2
+  -> add=2, rem=0, mod=0
+Commit c041098c690fe53cea5d20c62f128a4f7a5c19fe: 1 modified files
+  -> add=0, rem=0, mod=1
+Commit ad82eef3cebf8cd4f67e20b902e6d02e679e2ef1: 1 modified files
+  -> add=0, rem=0, mod=1
+Commit 3cf85f9f6bd7b172122865432b4c6f0ec844e22a: 1 modified files
+  -> add=3, rem=1, mod=0
+Commit dd709e72cb934eefd44de8d9969097173fbf45dc: 4 modified files
+  -> add=3, rem=0, mod=2
+  -> add=2, rem=0, mod=2
+  -> add=0, rem=0, mod=1
+  -> add=7, rem=0, mod=7
+Commit 7608158df3ed87a5c938c4a0b91f5b11101a9be1: 1 modified files
+  -> add=1, rem=0, mod=0
+Commit b718aa448378a83c698f92073a4aa24df0d9444b: 2 modified files
+  -> add=0, rem=0, mod=6
+Commit 0a6ea04e3bbd20833d2b49296e5adc1c5bb86386: 1 modified files
+  -> add=0, rem=2, mod=0
+Commit eab53fdfd60a84b0cc514d4f1f5d79226c76df01: 1 modified files
+Commit 536870071dbc4278264f59c9a2f5f447e584d139: 1 modified files
+  -> add=4, rem=0, mod=1
+Commit 83f52364b15265aec47d07e02b0fbf4093ab8554: 2 modified files
+  -> add=0, rem=8, mod=0
+  -> add=0, rem=26, mod=2
+Commit 0976f94f7602cb1f3f48cbc99ecdee98129965cc: 1 modified files
+Commit ca7984dff94c091a68454b61eb754ec9d4b782a6: 1 modified files
+Commit fa88fbdafb4a27185eed01bfa49844a18d47a529: 2 modified files
+Commit f3da882eae2d6ba6c72062a46344ba096a7c2b3d: 1 modified files
+  -> add=0, rem=4, mod=0
+Commit 34b82d3ac1058653b3de7be4697b55f67533b1f1: 4 modified files
+Commit 083351e963865a7eab55158042b81b8f8c0316b6: 1 modified files
+Commit 98761ce4b91b77e0602b1551d11925e817e8a9a5: 1 modified files
+Commit e47c6ecaae1df54aec9211f3c12d6f4f5bb09346: 1 modified files
+  -> add=5, rem=0, mod=3
+  -> add=25, rem=0, mod=4
+Commit 077e1cde78c3f9047f61506cf3a5b1abb2139e04: 1 modified files
+Commit ec210e3226dc0b481ac1b33082b3b508f89387e3: 1 modified files
+Commit 080de2e5be2d4b396b6792cde4cb2048fcdb4ce9: 1 modified files
+  -> add=3, rem=1, mod=2
+  -> add=0, rem=1, mod=8
+Commit 715f9527c1c1edd1a9c7a55ab4535211279c9374: 1 modified files
+  -> add=7, rem=0, mod=0
+Commit 272289a3df7297fd798a8ddf652c6d29f675de28: 1 modified files
+Commit e0a8f9de16fce34fc2957eca4c71d3ff2ac286d5: 4 modified files
+  -> add=10, rem=6, mod=1
+  -> add=6, rem=0, mod=0
+  -> add=0, rem=0, mod=4
+  -> add=3, rem=0, mod=1
+  -> add=1, rem=0, mod=0
+Commit 86db36a347b4ea030ee3e6c73ce04e35e4732999: 7 modified files
+  -> add=2, rem=0, mod=0
+  -> add=16, rem=0, mod=7
+  -> add=12, rem=0, mod=0
+  -> add=4, rem=0, mod=0
+  -> add=408, rem=0, mod=10
+  -> add=27, rem=0, mod=0
+Commit f794f3351f2672d782b8df0fa59f3cef38cffa59: 4 modified files
+  -> add=6, rem=0, mod=0
+  -> add=1, rem=0, mod=0
+  -> add=53, rem=9, mod=10
+  -> add=29, rem=0, mod=0
+Commit ffac9721939dca3f0ac7bfa90f3dc484b19c2706: 4 modified files
+  -> add=0, rem=21, mod=4
+  -> add=15, rem=0, mod=3
+  -> add=0, rem=22, mod=1
+  -> add=0, rem=21, mod=0
+Commit 05aec357871f892eea91d8b808f96a6091dd5310: 3 modified files
+  -> add=210, rem=0, mod=0
+Commit 95411d0455cc522c9f5176d37940a311e0241c42: 5 modified files
+  -> add=1, rem=0, mod=1
+  -> add=1, rem=0, mod=0
+  -> add=0, rem=0, mod=1
+  -> add=1, rem=0, mod=0
+  -> add=3, rem=3, mod=5
+Commit 240a8af929c7c57dcde28682725b29cf8474e8e5: 1 modified files
+  -> add=47, rem=0, mod=0
+Commit 7f7aa94bcaf03d0f18a6853d8f7dad6a4d25bbd6: 1 modified files
+  -> add=92, rem=0, mod=0
+Commit 4a4748f28b0b2547de745ed929e929a9b45563f1: 1 modified files
+Commit e4ea77f8e53f9accb9371fba34c189d0447ecce0: 1 modified files
+  -> add=29, rem=0, mod=0
+  -> add=68, rem=23, mod=40
+Commit 69a00fb3d6970681c15a23595ec54233ce10295c: 1 modified files
+  -> add=23, rem=0, mod=0
+Commit 322b598be4d9b9090cda560c4caab78704615ab4: 3 modified files
+  -> add=157, rem=0, mod=0
+  -> add=16, rem=0, mod=0
+  -> add=13, rem=0, mod=0
+Commit efaed9be998b5ae0afb7458e057e5f4402b43fa0: 7 modified files
+  -> add=0, rem=0, mod=1
+  -> add=1, rem=0, mod=3
+  -> add=21, rem=2, mod=1
+  -> add=0, rem=33, mod=0
+Commit 8ca4013d702dae4913fbb625aabf4c2966cdf1f0: 1 modified files
+  -> add=23, rem=0, mod=0
+  -> add=1, rem=0, mod=1
+  -> add=0, rem=1, mod=0
+Commit a61f3b4f476eceb25274161e5a53a8d18e42610b: 3 modified files
+  -> add=1, rem=0, mod=0
+  -> add=1591, rem=0, mod=0
+Commit 93f958f9c41f0bfd10627a2279457df64004d957: 4 modified files
+  -> add=1, rem=14, mod=12
+Commit ed56c5193ad89d1097cdbdc87abeb062e03a06eb: 3 modified files
+  -> add=1, rem=14, mod=5
+  -> add=0, rem=1, mod=0
+Commit 337c6c9a69af73dd367daeddee44cbbc2408cf9f: 1 modified files
+  -> add=3, rem=3, mod=2
+  -> add=0, rem=17, mod=1
+  -> add=3, rem=0, mod=0
+  -> add=3, rem=0, mod=8
+Commit 17614978ed34b8933e2b9272e2fe5133fdc38a58: 4 modified files
+Commit a9c3a015c12f5c83773411bf06c6daf3d60ed61d: 1 modified files
+  -> add=399, rem=0, mod=0
+  -> add=2, rem=0, mod=2
+Commit 65de51f93ebf9305ec011da59c0b5fe29429d1b9: 5 modified files
+Commit 03fc7f9c99c1e7ae2925d459e8487f1a6f199f79: 5 modified files
+  -> add=3, rem=0, mod=2
+  -> add=4, rem=0, mod=0
+  -> add=2, rem=0, mod=2
+  -> add=7, rem=0, mod=1
+  -> add=2, rem=0, mod=1
+  -> add=14, rem=0, mod=5
+  -> add=23, rem=7, mod=14
+Commit 58a317f1061c894d2344c0b6a18ab4a64b69b815: 13 modified files
+  -> add=8, rem=0, mod=1
+  -> add=2, rem=0, mod=1
+  -> add=2, rem=0, mod=0
+  -> add=5, rem=0, mod=0
+  -> add=0, rem=3, mod=0
+  -> add=1, rem=0, mod=0
+  -> add=1, rem=0, mod=0
+  -> add=1, rem=0, mod=0
+  -> add=321, rem=0, mod=0
+  -> add=33, rem=0, mod=2
+  -> add=287, rem=0, mod=0
+  -> add=90, rem=0, mod=0
+  -> add=2, rem=0, mod=0
+  -> add=3, rem=0, mod=0
+Commit f4f6ae7b7c1fdbaaaecafd183fabcf5314df2b59: 1 modified files
+  -> add=32, rem=12, mod=12
+Commit 7e62a699aafbd97928f19a8356d719b71b0e151c: 1 modified files
+  -> add=53, rem=43, mod=2
+Commit 550a7375fe720924241f0eb76e4a5c1a3eb8c32f: 30 modified files
+  -> add=1540, rem=0, mod=0
+  -> add=133, rem=0, mod=0
+  -> add=462, rem=0, mod=0
+  -> add=100, rem=0, mod=0
+  -> add=2266, rem=0, mod=0
+  -> add=517, rem=0, mod=0
+  -> add=66, rem=0, mod=0
+  -> add=172, rem=0, mod=0
+  -> add=2033, rem=0, mod=0
+  -> add=108, rem=0, mod=0
+  -> add=981, rem=0, mod=0
+  -> add=2170, rem=0, mod=0
+  -> add=110, rem=0, mod=0
+  -> add=115, rem=0, mod=0
+  -> add=830, rem=0, mod=0
+  -> add=300, rem=0, mod=0
+  -> add=425, rem=0, mod=0
+  -> add=433, rem=0, mod=0
+  -> add=324, rem=0, mod=0
+  -> add=56, rem=0, mod=0
+  -> add=1151, rem=0, mod=0
+  -> add=402, rem=0, mod=0
+  -> add=719, rem=0, mod=0
+  -> add=70, rem=0, mod=0
+Commit 925ea0fa5277c1e6bb9e51955ef34eea9736c3d7: 1 modified files
+  -> add=19, rem=4, mod=4
+Commit 193523bf937309d57c6dd7839bcf34d7a029dbee: 3 modified files
+  -> add=5, rem=0, mod=0
+  -> add=1, rem=0, mod=0
+  -> add=1, rem=0, mod=0
+Commit d4cd158176c385a885b6f6e62dd268963233fab1: 4 modified files
+Commit da49a8075c00b4d98ef069a0ee201177a8b79ead: 1 modified files
+Commit e04cafbc38c70af2aad3810ce24ab0eba8114779: 1 modified files
+  -> add=13, rem=0, mod=1
+  -> add=57, rem=0, mod=9
+Total rows before dedup: 88
+
+Completed! Saved results for 88 Linux commits.
+Job finished: Thu Jun 11 11:52:28 CEST 2026

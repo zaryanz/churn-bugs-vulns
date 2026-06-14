@@ -1,0 +1,6 @@
+Job started: Sat Jun 13 19:03:03 CEST 2026
+Node: g217
+CPUs allocated: 32
+Chunk: 6
+Error: Please provide a part number between 0 and 9. Example: python script.py 0
+Job finished: Sat Jun 13 19:03:07 CEST 2026
