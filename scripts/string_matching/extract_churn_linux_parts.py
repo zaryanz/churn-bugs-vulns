@@ -32,7 +32,7 @@ rows = []
 OUTPUT_PATH = f"data/intermediate/churn_linux_semantic_part_{part_idx}.csv"
 
 signal.signal(signal.SIGALRM, timeout_handler)
-repo_path = Path("/work/cps/cgk3480/churn-bugs-vulns/repos/linux_worker_{part_idx}")
+repo_path = Path(f"/work/cps/cgk3480/churn-bugs-vulns/repos/linux_worker_{part_idx}")
 
 if not repo_path.exists():
     raise FileNotFoundError(f"Directory missing: {repo_path}")
