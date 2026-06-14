@@ -34,7 +34,7 @@ OUTPUT_PATH = f"data/intermediate/churn_linux_semantic_part_{part_idx}.csv"
 signal.signal(signal.SIGALRM, timeout_handler)
 
 for _, r in tqdm(df.iterrows(), total=len(df), desc=f"Processing Linux Part {part_idx}"):
-    repo_path = Path("repos") / r.project
+    repo_path = f"/work/cps/cgk3480/churn-bugs-vulns/repos/linux_worker_{part_idx}"
     if not repo_path.exists():
         continue
     else:
