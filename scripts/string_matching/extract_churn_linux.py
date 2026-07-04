@@ -7,10 +7,7 @@ from utils.semantic import get_string_matching_metrics, get_hunks_from_diff
 from utils.file import is_test_file, is_source_code
 
 # Load original dataset
-df_full = pd.read_csv("data/intermediate/commits_dataset_linux.csv")
-
-# 2. CHANGE: Sample 1000 commits (500 BFC / 500 BIC) to match your other datasets
-# df = df_full.groupby('commit_role', group_keys=False).sample(n=5000, random_state=42)
+df = pd.read_csv("data/intermediate/commits_dataset_linux.csv")
 
 rows = []
 
@@ -72,5 +69,4 @@ out = pd.DataFrame(rows)
 
 out.to_csv(OUTPUT_PATH, index=False)
 
-print("\nProcessing Complete. Sample stats:")
-print(out.groupby('commit_role')['lines_modified'].describe())
+print("\nProcessing Complete.")

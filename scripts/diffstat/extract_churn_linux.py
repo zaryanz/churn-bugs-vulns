@@ -7,8 +7,7 @@ import os
 from utils.diffstat import get_diffstat_metrics
 from utils.file import is_test_file, is_source_code
 
-df_full = pd.read_csv("data/intermediate/commits_dataset_linux.csv")
-df = df_full.groupby('commit_role', group_keys=False).sample(n=5000, random_state=42)
+df = pd.read_csv("data/intermediate/commits_dataset_linux.csv")
 
 rows = []
 
