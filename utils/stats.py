@@ -58,3 +58,38 @@ def run_pct_stats(df):
         display_name = metric.replace('_', ' ').title()
         
         print(f"{display_name:<18} | {p_str:<12} | {d:>7.3f} ({res:<10}) | {sig}")
+
+import pandas as pd
+
+def descriptive_stats_table(df):
+
+    metrics = [
+        ("lines_added", "Lines Added"),
+        ("lines_removed", "Lines Removed"),
+        ("lines_modified", "Lines Modified"),
+    ]
+
+    result = pd.DataFrame()
+
+    for metric, title in metrics:
+
+        grouped = df.groupby("Dataset")[metric]
+
+        stats = pd.DataFrame({
+            "n": grouped.count(),
+            "Median": grouped.median(),
+            "Q1": grouped.quantile(0.25),
+            "Q3": grouped.quantile(0.75),
+            "Minimum": grouped.min(),
+            "Maximum": grouped.max(),
+        }).T
+
+        stats = stats[["Vulnerability", "Bug"]]
+
+        stats.columns = pd.MultiIndex.from_product(
+            [[title], stats.columns]
+        )
+
+        result = pd.concat([result, stats], axis=1)
+
+    return result.round(1)

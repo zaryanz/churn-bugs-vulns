@@ -27,4 +27,6 @@ def plot_cwe_median(df, dataset_name, commit_role):
         ax.set_ylabel(f"Median {label}")
         plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
+        if dataset_name == "TOSEM" and label == "Lines Added":
+            plt.yscale('log')
         plt.show()

@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/work/cps/cgk3480/churn-bugs-vulns/scripts/diffstat/extract_churn_icvul_multiprocessing.py", line 2, in <module>
-    from pydriller import Repository
-ModuleNotFoundError: No module named 'pydriller'

@@ -1,37 +1,0 @@
-Chunk 5:   0%|          | 0/32 [00:00<?, ?it/s]Pumping 'stdout' of cmd(['git', 'diff-tree', 'bbd16d96d1ec531f6ad950d01b542422040033b8', 'cfc350ab0efb932f456436d65db65f0e77993148', '-r', '--abbrev=40', '--full-index', '-M', '-p', '--no-ext-diff', '--no-color']) failed due to: ValueError('PyMemoryView_FromBuffer(): info->buf must not be NULL')
-Exception in thread Thread-323 (pump_stream):
-Traceback (most recent call last):
-  File "/fibus/fs2/02/cgk3480/.conda/envs/churn-env/lib/python3.11/site-packages/git/cmd.py", line 157, in pump_stream
-    for line in stream:
-ValueError: PyMemoryView_FromBuffer(): info->buf must not be NULL
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/fibus/fs2/02/cgk3480/.conda/envs/churn-env/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
-    self.run()
-  File "/fibus/fs2/02/cgk3480/.conda/envs/churn-env/lib/python3.11/threading.py", line 982, in run
-    self._target(*self._args, **self._kwargs)
-  File "/fibus/fs2/02/cgk3480/.conda/envs/churn-env/lib/python3.11/site-packages/git/cmd.py", line 170, in pump_stream
-    raise CommandError([f"<{name}-pump>"] + remove_password_if_present(cmdline), ex) from ex
-git.exc.CommandError: Cmd('<stdout-pump>') failed due to: ValueError('PyMemoryView_FromBuffer(): info->buf must not be NULL')
-  cmdline: <stdout-pump> git diff-tree bbd16d96d1ec531f6ad950d01b542422040033b8 cfc350ab0efb932f456436d65db65f0e77993148 -r --abbrev=40 --full-index -M -p --no-ext-diff --no-color
-Pumping 'stdout' of cmd(['git', 'diff-tree', 'aa3c6ce4eab8fb0e967954be1ba1cad3b715f63b', 'b37e3534ac4275c1f0d0e08d1b6f672f6cc740c3', '-r', '--abbrev=40', '--full-index', '-M', '-p', '--no-ext-diff', '--no-color']) failed due to: ValueError('PyMemoryView_FromBuffer(): info->buf must not be NULL')
-Exception in thread Thread-299 (pump_stream):
-Traceback (most recent call last):
-  File "/fibus/fs2/02/cgk3480/.conda/envs/churn-env/lib/python3.11/site-packages/git/cmd.py", line 157, in pump_stream
-    for line in stream:
-ValueError: PyMemoryView_FromBuffer(): info->buf must not be NULL
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/fibus/fs2/02/cgk3480/.conda/envs/churn-env/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
-    self.run()
-  File "/fibus/fs2/02/cgk3480/.conda/envs/churn-env/lib/python3.11/threading.py", line 982, in run
-    self._target(*self._args, **self._kwargs)
-  File "/fibus/fs2/02/cgk3480/.conda/envs/churn-env/lib/python3.11/site-packages/git/cmd.py", line 170, in pump_stream
-    raise CommandError([f"<{name}-pump>"] + remove_password_if_present(cmdline), ex) from ex
-git.exc.CommandError: Cmd('<stdout-pump>') failed due to: ValueError('PyMemoryView_FromBuffer(): info->buf must not be NULL')
-  cmdline: <stdout-pump> git diff-tree aa3c6ce4eab8fb0e967954be1ba1cad3b715f63b b37e3534ac4275c1f0d0e08d1b6f672f6cc740c3 -r --abbrev=40 --full-index -M -p --no-ext-diff --no-color
-Chunk 5:   3%|▎         | 1/32 [2:29:34<77:16:45, 8974.37s/it]Chunk 5:   6%|▋         | 2/32 [2:30:01<30:55:36, 3711.22s/it]Chunk 5:  12%|█▎        | 4/32 [2:30:02<10:46:17, 1384.91s/it]Chunk 5:  16%|█▌        | 5/32 [2:30:25<7:13:33, 963.48s/it]  Chunk 5:  19%|█▉        | 6/32 [2:30:44<4:52:02, 673.94s/it]Chunk 5:  25%|██▌       | 8/32 [2:30:44<2:23:44, 359.35s/it]Chunk 5:  31%|███▏      | 10/32 [2:30:58<1:20:06, 218.49s/it]Chunk 5:  34%|███▍      | 11/32 [2:31:08<1:00:12, 172.04s/it]Chunk 5:  38%|███▊      | 12/32 [2:31:35<45:44, 137.25s/it]  Chunk 5:  41%|████      | 13/32 [2:31:42<32:53, 103.89s/it]Chunk 5:  44%|████▍     | 14/32 [2:32:16<25:30, 85.04s/it] Chunk 5:  47%|████▋     | 15/32 [2:35:53<34:27, 121.64s/it]Chunk 5:  50%|█████     | 16/32 [2:36:08<24:20, 91.28s/it] Chunk 5:  53%|█████▎    | 17/32 [2:36:09<16:20, 65.34s/it]Chunk 5:  56%|█████▋    | 18/32 [2:36:37<12:41, 54.38s/it]Chunk 5:  62%|██████▎   | 20/32 [2:36:48<06:28, 32.33s/it]Chunk 5:  66%|██████▌   | 21/32 [2:36:49<04:30, 24.63s/it]Chunk 5:  72%|███████▏  | 23/32 [2:36:59<02:27, 16.40s/it]Chunk 5:  78%|███████▊  | 25/32 [2:37:08<01:24, 12.10s/it]Chunk 5:  81%|████████▏ | 26/32 [2:37:08<00:57,  9.62s/it]Chunk 5:  84%|████████▍ | 27/32 [2:37:09<00:37,  7.53s/it]Chunk 5:  91%|█████████ | 29/32 [2:37:18<00:18,  6.24s/it]Chunk 5:  97%|█████████▋| 31/32 [2:37:34<00:06,  6.90s/it]Chunk 5: 100%|██████████| 32/32 [2:38:03<00:00, 11.46s/it]Chunk 5: 100%|██████████| 32/32 [2:38:03<00:00, 296.35s/it]
