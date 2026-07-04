@@ -4,14 +4,25 @@
 
 The submitted project already includes:
 
-- A pre-configured Python virtual environment (`venv`)
 - All processed output files (CSV files)
-- Jupyter notebooks with the generated results
+- Jupyter notebooks containing the analyses and generated results
 - Figures and statistical outputs used in the thesis
 
-To explore or reproduce the reported results, simply activate the provided virtual environment and open the notebooks.
+It is recommended to first copy the project from the USB drive to your local machine before running it. This avoids the slower read/write speeds of the USB drive and provides sufficient disk space should you wish to clone the source repositories.
 
-### Activate the virtual environment
+### 1. Install Python
+
+This project was developed and tested using **Python 3.14.4**. While it may work with earlier Python 3 versions, using the same version is recommended for maximum compatibility.
+
+### 2. Create a Virtual Environment
+
+Create a Python virtual environment named `venv`:
+
+```bash
+python -m venv venv
+```
+
+### 3. Activate the Virtual Environment
 
 **Windows**
 
@@ -24,6 +35,14 @@ venv\Scripts\activate
 ```bash
 source venv/bin/activate
 ```
+
+### 4. Install the Required Packages
+
+```bash
+pip install -r requirements.txt
+```
+
+You can now open the Jupyter notebooks to inspect or reproduce the analyses presented in the thesis.
 
 ---
 
