@@ -1,4 +1,4 @@
-# Code Churn Analysis
+# Code Churn in Vulnerability and Bug Commits: An Empirical Analysis
 
 ## Quick Start (Recommended)
 
