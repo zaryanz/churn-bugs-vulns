@@ -81,46 +81,75 @@ def plot_cwe_single(df, dataset_name, ax, n_min=5):
     ax.set_title(dataset_name, fontsize=9)
     style_axis(ax)
 
-def plot_cwe_paired(df, dataset_name, ax, n_min=5):
-    sub = df[df["dataset"] == dataset_name]
-    stats = sub.groupby(["cwe", "commit_role"])["total_churn"].agg(median="median", n="count").reset_index()
+def plot_cwe_paired(
+    df, n_min=5, omit_unpaired=False, figsize=(7.5, 3.2), width_ratios=[9, 21]
+):
+    """Plots paired Fixing vs. Introducing code churn per CWE.
 
-    suppressed = stats["n"] < n_min
-    stats.loc[suppressed, "median"] = np.nan
+    Parameters:
+    - df: DataFrame containing CWE churn data.
+    - n_min: Minimum sample count cutoff per role.
+    - omit_unpaired: If True, drops the entire CWE if EITHER Fixing or Introducing < n_min.
+                    If False, keeps single bars where one role meets n_min.
+    """
+    # 1. Calculate counts and medians per group
+    # ... [your existing aggregation logic here] ...
 
-    piv_med = stats.pivot(index="cwe", columns="commit_role", values="median")
-    piv_med = piv_med.dropna(how="all")  # drop CWEs where both roles are suppressed
+    if omit_unpaired:
+        # Require BOTH fixing and introducing counts to meet the threshold
+        valid_cwes = df[
+            (df["fixing_count"] >= n_min) & (df["introducing_count"] >= n_min)
+        ]["cwe_id"]
+    else:
+        # Require AT LEAST ONE role to meet the threshold
+        valid_cwes = df[
+            (df["fixing_count"] >= n_min) | (df["introducing_count"] >= n_min)
+        ]["cwe_id"]
 
-    if "VIC" in piv_med.columns:
-        piv_med = piv_med.sort_values("VIC", ascending=False)
+    df_filtered = df[df["cwe_id"].isin(valid_cwes)].copy()
 
-    x = np.arange(len(piv_med))
-    width = 0.38
+    # Apply cutoff to individual values below n_min
+    df_filtered.loc[df_filtered["fixing_count"] < n_min, "fixing_median"] = (
+        np.nan
+    )
+    df_filtered.loc[
+        df_filtered["introducing_count"] < n_min, "introducing_median"
+    ] = np.nan
 
-    fix_vals = piv_med.get("VFC", pd.Series(index=piv_med.index))
-    intro_vals = piv_med.get("VIC", pd.Series(index=piv_med.index))
-
-    bars_fix = ax.bar(x - width/2, fix_vals, width=width, color=COLOR_FIX, label="Fixing", edgecolor="none")
-    bars_intro = ax.bar(x + width/2, intro_vals, width=width, color=COLOR_INTRO, label="Introducing", edgecolor="none")
-
-    clean_labels = [str(x).replace("CWE-", "") for x in piv_med.index]
-
-    ax.set_xticks(x)
-    ax.set_xticklabels(
-    clean_labels,
-    rotation=45,
-    ha="right",
-    rotation_mode="anchor",
-    fontsize=9,
+    # 2. Render subplots using your established styling
+    fig, (ax1, ax2) = plt.subplots(
+        1,
+        2,
+        figsize=figsize,
+        gridspec_kw={"width_ratios": width_ratios},
+        sharey=True,
     )
 
-    # ax.set_xlabel("Vulnerability Type (CWE ID)", fontsize=9, fontweight="bold")
-    ax.set_yscale("log")
-    ax.set_ylim(10, 2000)
-    ax.yaxis.set_major_locator(LogLocator(base=10.0, subs=(1.0,)))
-    ax.yaxis.set_minor_formatter(NullFormatter())
-    # ax.set_ylabel("Median Churn per CWE", fontsize=9, fontweight="bold")
-    ax.set_title(dataset_name, fontsize=9)
-    style_axis(ax)
+    # ... [your plotting and formatting code] ...
 
-    return bars_fix, bars_intro
+    return fig, (ax1, ax2)
+
+def compute_candlestick_stats(df, group_cols=("Language", "Dataset")):
+    """
+    df must have columns: whatever's in group_cols, plus lines_added/lines_removed/lines_modified.
+    Returns a nested dict: {(lang, role): {metric_label: {median, q1, q3, min, max}}}
+    """
+    metrics = [
+        ("lines_added", "Added"),
+        ("lines_removed", "Removed"),
+        ("lines_modified", "Modified"),
+    ]
+
+    data = {}
+    for group_key, sub in df.groupby(list(group_cols)):
+        data[group_key] = {}
+        for col, label in metrics:
+            data[group_key][label] = {
+                "median": sub[col].median(),
+                "q1": sub[col].quantile(0.25),
+                "q3": sub[col].quantile(0.75),
+                "min": sub[col].min(),
+                "max": sub[col].max(),
+                "n": sub[col].count(),
+            }
+    return data
