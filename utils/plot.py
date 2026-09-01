@@ -81,53 +81,49 @@ def plot_cwe_single(df, dataset_name, ax, n_min=5):
     ax.set_title(dataset_name, fontsize=9)
     style_axis(ax)
 
-def plot_cwe_paired(
-    df, n_min=5, omit_unpaired=False, figsize=(7.5, 3.2), width_ratios=[9, 21]
-):
-    """Plots paired Fixing vs. Introducing code churn per CWE.
+def plot_cwe_paired(df, dataset_name, ax, n_min=5, require_both=False):
+    sub = df[df["dataset"] == dataset_name]
+    stats = sub.groupby(["cwe", "commit_role"])["total_churn"].agg(median="median", n="count").reset_index()
 
-    Parameters:
-    - df: DataFrame containing CWE churn data.
-    - n_min: Minimum sample count cutoff per role.
-    - omit_unpaired: If True, drops the entire CWE if EITHER Fixing or Introducing < n_min.
-                    If False, keeps single bars where one role meets n_min.
-    """
-    # 1. Calculate counts and medians per group
-    # ... [your existing aggregation logic here] ...
+    suppressed = stats["n"] < n_min
+    stats.loc[suppressed, "median"] = np.nan
 
-    if omit_unpaired:
-        # Require BOTH fixing and introducing counts to meet the threshold
-        valid_cwes = df[
-            (df["fixing_count"] >= n_min) & (df["introducing_count"] >= n_min)
-        ]["cwe_id"]
+    piv_med = stats.pivot(index="cwe", columns="commit_role", values="median")
+
+    # ensure both role columns exist even if one role is entirely missing for this dataset
+    for role in ["VFC", "VIC"]:
+        if role not in piv_med.columns:
+            piv_med[role] = np.nan
+
+    if require_both:
+        piv_med = piv_med.dropna(how="any")   # keep only CWEs where BOTH roles meet n_min
     else:
-        # Require AT LEAST ONE role to meet the threshold
-        valid_cwes = df[
-            (df["fixing_count"] >= n_min) | (df["introducing_count"] >= n_min)
-        ]["cwe_id"]
+        piv_med = piv_med.dropna(how="all")   # keep CWEs where AT LEAST ONE role meets n_min
 
-    df_filtered = df[df["cwe_id"].isin(valid_cwes)].copy()
+    if "VIC" in piv_med.columns:
+        piv_med = piv_med.sort_values("VIC", ascending=False)
 
-    # Apply cutoff to individual values below n_min
-    df_filtered.loc[df_filtered["fixing_count"] < n_min, "fixing_median"] = (
-        np.nan
-    )
-    df_filtered.loc[
-        df_filtered["introducing_count"] < n_min, "introducing_median"
-    ] = np.nan
+    x = np.arange(len(piv_med))
+    width = 0.38
 
-    # 2. Render subplots using your established styling
-    fig, (ax1, ax2) = plt.subplots(
-        1,
-        2,
-        figsize=figsize,
-        gridspec_kw={"width_ratios": width_ratios},
-        sharey=True,
-    )
+    fix_vals = piv_med["VFC"]
+    intro_vals = piv_med["VIC"]
 
-    # ... [your plotting and formatting code] ...
+    bars_fix = ax.bar(x - width/2, fix_vals, width=width, color=COLOR_FIX, label="Fixing", edgecolor="none")
+    bars_intro = ax.bar(x + width/2, intro_vals, width=width, color=COLOR_INTRO, label="Introducing", edgecolor="none")
 
-    return fig, (ax1, ax2)
+    clean_labels = [str(c).replace("CWE-", "") for c in piv_med.index]
+    ax.set_xticks(x)
+    ax.set_xticklabels(clean_labels, rotation=45, ha="right", rotation_mode="anchor", fontsize=9)
+
+    ax.set_yscale("log")
+    # ax.set_ylim(10, 2000)
+    ax.yaxis.set_major_locator(LogLocator(base=10.0, subs=(1.0,)))
+    ax.yaxis.set_minor_formatter(NullFormatter())
+    ax.set_title(dataset_name, fontsize=9)
+    style_axis(ax)
+
+    return bars_fix, bars_intro
 
 def compute_candlestick_stats(df, group_cols=("Language", "Dataset")):
     """
